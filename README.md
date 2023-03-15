@@ -40,7 +40,7 @@
  
   <tr>
    <td align = "center"> ✏️ </td>
-   <td align = "center"> : pencil : </td>
+   <td align = "center"> : pencil2 : </td>
     <td align = "center"> Readme 내용 추가 </td>
      <td align = "left"> ✏️ :: 함수 lecture 내용 추가 </td>
  </tr>
@@ -48,14 +48,14 @@
  
   <tr>
    <td align = "center"> 🛠️ </td>
-   <td align = "center"> :hammer_wrench: </td>
+   <td align = "center"> : hammer_and_wrench : </td>
     <td align = "center"> 잘못된 Readme 수정 </td>
      <td align = "left"> 🛠️ :: 함수 lecture Readme 수정 </td>
  </tr>
  
  <tr>
    <td align = "center"> 🖼️ </td>
-   <td align = "center"> :frame_photo: </td>
+   <td align = "center"> : framed_picture : </td>
     <td align = "center"> 시작적인 자료 업로드 </td>
      <td align = "left"> 🖼️ :: 참조타입에 대한 시각 자료 업로드 </td>
  </tr>
