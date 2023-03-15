@@ -31,42 +31,42 @@
  </tr>
  
   <tr>
-   <td align = "center"> :tada: </td>
+   <td align = "center"> 📄 </td>
     <td align = "center"> lecture의 첫 Readme 추가 </td>
-     <td align = "left"> :tada: :: 함수 lecture 첫 Readme 추가 </td>
+     <td align = "left"> 📄 :: 함수 lecture 첫 Readme 추가 </td>
  </tr>
  
  
   <tr>
-   <td align = "center"> :tada: </td>
+   <td align = "center"> ✏️ </td>
     <td align = "center"> Readme 내용 추가 </td>
-     <td align = "left"> :tada: :: 함수 lecture 내용 추가 </td>
+     <td align = "left"> ✏️ :: 함수 lecture 내용 추가 </td>
  </tr>
  
  
   <tr>
-   <td align = "center"> :tada: </td>
+   <td align = "center"> 🛠️ </td>
     <td align = "center"> 잘못된 Readme 수정 </td>
-     <td align = "left"> :tada: :: 함수 lecture Readme 수정 </td>
+     <td align = "left"> 🛠️ :: 함수 lecture Readme 수정 </td>
  </tr>
  
  <tr>
-   <td align = "center"> :tada: </td>
+   <td align = "center"> 🖼️ </td>
     <td align = "center"> 시작적인 자료 업로드 </td>
-     <td align = "left"> :tada: :: 참초타입에 대한 시각 자료 업로드 </td>
+     <td align = "left"> 🖼️ :: 참조타입에 대한 시각 자료 업로드 </td>
  </tr>
  
  
   <tr>
-   <td align = "center"> :tada: </td>
+   <td align = "center"> 👏 </td>
     <td align = "center">  병합(merge) </td>
-     <td align = "left"> :tada: :: 함수 lecture 정리 완료 </td>
+     <td align = "left"> 👏 :: 함수 lecture 정리 완료 </td>
  </tr>
  
  <tr>
-   <td align = "center"> :tada: </td>
+   <td align = "center"> 📎 </td>
     <td align = "center">  소스 코드 첨부 </td>
-     <td align = "left"> :tada: :: 함수 lecture 소스 코드 첨부 </td>
+     <td align = "left"> 📎 :: 함수 lecture 소스 코드 첨부 </td>
  </tr>
 
 
