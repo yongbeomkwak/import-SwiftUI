@@ -62,6 +62,7 @@
 
 1. 브랜치 명
  - **브랜치를 만들기 전 반드시 다른 인원이 해당 lecture 작업을 하고 있는 지 확인한다.**
+ - _절대 main 브랜치는 건드리지 않는다._
  - lecture/강의명_닉네임 으로 만.
    -  ex) lecture/function_Kayle 
    
