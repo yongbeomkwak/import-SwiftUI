@@ -57,6 +57,12 @@
     <td align = "center">  병합(merge) </td>
      <td align = "left"> :tada: :: 함수 lecture 정리 완료 </td>
  </tr>
+ 
+ <tr>
+   <td align = "center"> :tada: </td>
+    <td align = "center">  소스 코드 첨부 </td>
+     <td align = "left"> :tada: :: 함수 lecture 소스 코드 첨부 </td>
+ </tr>
 
 
 </table>
