@@ -2,13 +2,10 @@
 
 
 [리드미 문법 참고 자료](https://gist.github.com/ihoneymon/652be052a0727ad59601)
-
----
 <br><br>
-
 ### *커밋 메시지 템플릿*
 
-<table>
+<table align = "center">
  
  <th> Emoji  </th>
  <th> Description</th>
