@@ -1,7 +1,5 @@
 # Apple Developer Academy  Tech & Design Study 규칙
 
-
-[리드미 문법 참고 자료](https://gist.github.com/ihoneymon/652be052a0727ad59601)
 <br><br>
 
 ### 커밋 규칙
@@ -92,3 +90,7 @@
  - 만약 approve를 받지 못했다면 반드시 해당 사항에대하여 고쳐주시길 바랍니다.
  - 만약 해당 PR에 대하여 approve가 아닌 과정을 했을 시 반드시 정확한 피드백(코멘트)를 해주시기 바랍니다.
 
+<br>
+
+## 참고 자료
+[리드미 문법 참고 자료](https://gist.github.com/ihoneymon/652be052a0727ad59601)
