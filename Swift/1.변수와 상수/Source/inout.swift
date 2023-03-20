@@ -1,7 +1,29 @@
-func add(number: inout Int) {
-    number += 1
+import UIKit
+import Foundation
+
+var a :Int = 3
+
+
+func add(_ a: inout Int) {
+
+    a = a + 3
 }
 
-var myNumber = 10
-add(number: &myNumber) //레퍼런스 전달 
-print(myNumber) //11 
+func add2(_ a :Int){
+    
+    var aa:Int = a
+    
+    aa = aa + 3
+    
+}
+
+
+add2(a)
+add2(a)
+
+print(a) // result: a = 3
+
+add(&a)
+add(&a)
+
+print(a) //result: a = 9 (3+3+3)
