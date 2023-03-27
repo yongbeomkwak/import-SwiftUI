@@ -16,6 +16,7 @@
 		B015EF7229D1AC7D008E84F0 /* AppleSDGothicNeoH.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B015EF6F29D1AC7D008E84F0 /* AppleSDGothicNeoH.ttf */; };
 		B015EF7329D1AC7D008E84F0 /* AppleSDGothicNeoEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B015EF7029D1AC7D008E84F0 /* AppleSDGothicNeoEB.ttf */; };
 		B015EF7829D1AF30008E84F0 /* Extension+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = B015EF7729D1AF30008E84F0 /* Extension+Font.swift */; };
+		B015EF7A29D1B535008E84F0 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B015EF7929D1B535008E84F0 /* Extension+Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		B015EF7029D1AC7D008E84F0 /* AppleSDGothicNeoEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoEB.ttf; sourceTree = "<group>"; };
 		B015EF7429D1ACE1008E84F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B015EF7729D1AF30008E84F0 /* Extension+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Font.swift"; sourceTree = "<group>"; };
+		B015EF7929D1B535008E84F0 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				B015EF7729D1AF30008E84F0 /* Extension+Font.swift */,
+				B015EF7929D1B535008E84F0 /* Extension+Color.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				B015EF7829D1AF30008E84F0 /* Extension+Font.swift in Sources */,
 				B015EF5D29D1AADA008E84F0 /* ContentView.swift in Sources */,
 				B015EF5B29D1AADA008E84F0 /* KayleAlarmApp.swift in Sources */,
+				B015EF7A29D1B535008E84F0 /* Extension+Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
