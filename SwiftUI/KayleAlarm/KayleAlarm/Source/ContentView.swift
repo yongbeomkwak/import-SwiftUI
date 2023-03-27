@@ -10,9 +10,10 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image("Timer")
+            
                 
-            Text("Hello, world!")
+            Text("\(UIScreen.width)")
+            Text("\(UIScreen.height)")
             
                 
                 
