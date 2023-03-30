@@ -77,3 +77,53 @@
 
  - Scence 내 각 노드들이 물리적인 상호작용<br>
 (충돌, 중력의 적용, 힘을 받아 움직이거나 회전)을 하는 경우라면<br> 노드의 physicsBody 속성을 정의하고, 그 속성들을 조정할 수 있다.
+
+
+<br>
+
+---
+<br>
+
+## 초기화
+
+1. init()
+2. sceneDidLoad()
+3. didMove(to:)
+
+
+<br>
+
+## 콜백함수
+1. update(_:)
+2. didBegin(_:)
+3. touches
+   -  Began
+   -  Moved
+   -  Ended
+   -  Cancelled(_:with:)
+
+<br>
+
+## ScaleMode
+
+<br>
+
+<img width="1376" alt="스크린샷 2023-03-30 오후 10 24 55" src="https://user-images.githubusercontent.com/48616183/228850861-00485047-4018-469b-bd15-4479716fac2e.png">
+
+<br>
+
+1. aspectFit
+-   씬 너비 또는 높이 중 짧은 쪽이 기준으로 화면에 가득차게 확대한다.
+
+2. aspectFill
+-  씬 너비 또는 높이 중 긴 쪽을 기준으로 화면에 가득차게 확대한다.
+
+3. fill
+- 비율에 관계 없이 화면에 가득차게 확대
+
+4. resizeFill
+-  씬을 조정하지 않고 기기에 보여질 화면까지만 보여준다.
+
+
+
+
