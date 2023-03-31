@@ -44,29 +44,36 @@
 
  ### 1.  SKLabelNode
 
-     텍스트를 이용한 Label을 표현할 때 사용 
+-  텍스트를 이용한 Label을 표현할 때 사용 
 
  ### 2. SKSpriteNode
     
-    이미지를 보여줄 때 사용
+- 이미지를 보여줄 때 사용
+
+ ```swift
+let land = SKSpriteNode(imageNamed: "land")
+land.position = CGPoint(x: width/2, y: 50)
+land.zPosition = 3 // 숫자가 클수록 화면 뒤쪽으로 배치 
+self.addChild(land)
+```
 
  ### 3. SKSapeNode
     
-    도형을 그릴 때 사용
+-  도형을 그릴 때 사용
 
  ### 4. SKEmitterNode
  
-    특수 효과를 발생시킬 때 사용
+-  특수 효과를 발생시킬 때 사용
  ### 5. SKEffectNode 
 
-    코어 이미지 필터를 자식노드에 적용 합니다.(카메라 필터와 비슷)
+-  코어 이미지 필터를 자식노드에 적용 합니다.(카메라 필터와 비슷)
 
  ### 6.   SKVideoNode
 
-    비디오를 재생해주는 노드 입니다.
+-  비디오를 재생해주는 노드 입니다.
  ### 7 6. SKCropNode
 
-    마스크를 이용해서 노드를 잘라 낼수 있습니다.
+-  마스크를 이용해서 노드를 잘라 낼수 있습니다.
 
 ---
 <br>
