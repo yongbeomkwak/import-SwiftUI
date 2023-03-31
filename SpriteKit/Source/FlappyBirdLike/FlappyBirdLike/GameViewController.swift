@@ -5,9 +5,7 @@
 //  Created by yongbeomkwak on 2023/03/31.
 //
 
-import UIKit
 import SpriteKit
-import GameplayKit
 
 class GameViewController: UIViewController {
 
@@ -16,17 +14,17 @@ class GameViewController: UIViewController {
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
+             let scene = GameScene(size: view.bounds.size)
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 
                 // Present the scene
                 view.presentScene(scene)
-            }
             
-            view.ignoresSiblingOrder = true
             
-            view.showsFPS = true
+            view.ignoresSiblingOrder = true // 노느를 그리는 순서를 컴퓨터가 알아서 하도록 (true)
+            
+            view.showsFPS = true // FPS 보여주기
             view.showsNodeCount = true
         }
     }
@@ -42,4 +40,6 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+
 }
