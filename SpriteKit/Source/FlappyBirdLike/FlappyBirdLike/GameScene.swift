@@ -28,7 +28,7 @@ class GameScene: SKScene {
         
         let bird = SKSpriteNode(imageNamed: "bird1")
         bird.position = CGPoint(x: width/2, y: 350)
-        bird.zPosition = 4
+        bird.zPosition = Layer.bird
         self.addChild(bird)
         
          // 코드로 애니메이션 삽입
@@ -81,7 +81,7 @@ class GameScene: SKScene {
             // 1,1: 우상단 기준
             
             land.position = CGPoint(x: CGFloat(i)*landWidth, y: 0)
-            land.zPosition = 3
+            land.zPosition = Layer.land
             
             addChild(land)
             
@@ -103,7 +103,7 @@ class GameScene: SKScene {
             // 1,1: 우상단 기준
             
             sky.position = CGPoint(x: CGFloat(i)*skyWidth, y: landTexture.size().height)
-            sky.zPosition = 1
+            sky.zPosition = Layer.sky
             addChild(sky)
             
             let moveLeft = SKAction.moveBy(x: -skyWidth, y: 0, duration: 40)
@@ -124,7 +124,7 @@ class GameScene: SKScene {
             // 1,1: 우상단 기준
             
             ceiling.position = CGPoint(x: CGFloat(i)*ceilingWidth, y: self.size.height - ceiling.size.height/2 )
-            ceiling.zPosition = 3
+            ceiling.zPosition = Layer.ceiling
             addChild(ceiling)
             
             let moveLeft = SKAction.moveBy(x: -ceilingWidth, y: 0, duration: 3)
@@ -147,12 +147,12 @@ class GameScene: SKScene {
         
         let pipeUp = SKSpriteNode(imageNamed: "pipe")
         pipeUp.position = CGPoint(x: width/2, y: 0)
-        pipeUp.zPosition = 2
+        pipeUp.zPosition = Layer.pipe
         self.addChild(pipeUp)
         
         let pipeDown = SKSpriteNode(imageNamed: "pipe")
         pipeDown.position = CGPoint(x: width/2, y: height + 100 )
-        pipeDown.zPosition = 2
+        pipeDown.zPosition = Layer.pipe
         pipeDown.xScale = -1 // x방향으로 180도 회전 (좌우 반전)
         pipeDown.zRotation = .pi // 상하 반전
         
