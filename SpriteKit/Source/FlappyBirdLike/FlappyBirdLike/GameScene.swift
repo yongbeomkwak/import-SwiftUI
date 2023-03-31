@@ -15,6 +15,7 @@ class GameScene: SKScene {
         
         createBird()
         createEnvironment()
+        setUpPipe()
         
         
     }
@@ -49,25 +50,100 @@ class GameScene: SKScene {
     }
     
     func createEnvironment() {
+        
         let width = self.size.width
         let height = self.size.height
         
-        let land = SKSpriteNode(imageNamed: "land")
-        land.position = CGPoint(x: width/2, y: 50)
-        land.zPosition = 3 // 숫자가 클수록 화면 뒤쪽으로 배치
-        self.addChild(land)
+        let envAltas = SKTextureAtlas(named: "Environment")
         
-        let sky = SKSpriteNode(imageNamed: "sky")
-        sky.position = CGPoint(x: width/2, y: 100)
-        sky.zPosition = 1
-        self.addChild(sky)
+        let landTexture = envAltas.textureNamed("land")
+        let landWidth = landTexture.size().width
+        let landRepeatNum = Int(ceil(width / landWidth))
         
         
+        let skyTexture = envAltas.textureNamed("sky")
+        let skyWidth = skyTexture.size().width
+        let skyRepeatNum = Int(ceil(width / skyWidth))
         
-        let ceiling = SKSpriteNode(imageNamed: "ceiling")
-        ceiling.position = CGPoint(x: width/2, y: height)
-        ceiling.zPosition = 3
-        self.addChild(ceiling)
+        let ceilngTexture = envAltas.textureNamed("ceiling")
+        let ceilingWidth = ceilngTexture.size().width
+        let ceilingRepeatNum = Int(ceil(width / ceilingWidth))
+       
+        
+        //화면의 전체 크기를 land의 크기로 나눈 올림값
+        
+        for i in 0...landRepeatNum {
+            let land = SKSpriteNode(texture: landTexture)
+            land.anchorPoint = .zero
+            // 앵커포인트 : 어디를 기준으로 붙히냐
+            // 0.5, 0.5 : 스프라이트의 중심을 기준으로
+            // 0,0: 좌하단 기준
+            // 1,1: 우상단 기준
+            
+            land.position = CGPoint(x: CGFloat(i)*landWidth, y: 0)
+            land.zPosition = 3
+            
+            addChild(land)
+            
+            let moveLeft = SKAction.moveBy(x: -landWidth, y: 0, duration: 20)
+            let moveReset = SKAction.moveBy(x: landWidth, y: 0, duration: 0)
+            let moveSequence = SKAction.sequence([moveLeft,moveReset])
+            
+            land.run(SKAction.repeatForever(moveSequence))
+            
+            
+        }
+        
+        for i in 0...skyRepeatNum {
+            let sky = SKSpriteNode(texture: skyTexture)
+            sky.anchorPoint = .zero
+            // 앵커포인트 : 어디를 기준으로 붙히냐
+            // 0.5, 0.5 : 스프라이트의 중심을 기준으로
+            // 0,0: 좌하단 기준
+            // 1,1: 우상단 기준
+            
+            sky.position = CGPoint(x: CGFloat(i)*skyWidth, y: landTexture.size().height)
+            sky.zPosition = 1
+            addChild(sky)
+            
+            let moveLeft = SKAction.moveBy(x: -skyWidth, y: 0, duration: 40)
+            let moveReset = SKAction.moveBy(x: skyWidth, y: 0, duration: 0)
+            let moveSequence = SKAction.sequence([moveLeft,moveReset])
+            
+            sky.run(SKAction.repeatForever(moveSequence))
+            
+            
+        }
+        
+        for i in 0...ceilingRepeatNum {
+            let ceiling = SKSpriteNode(texture: ceilngTexture)
+            ceiling.anchorPoint = .zero
+            // 앵커포인트 : 어디를 기준으로 붙히냐
+            // 0.5, 0.5 : 스프라이트의 중심을 기준으로
+            // 0,0: 좌하단 기준
+            // 1,1: 우상단 기준
+            
+            ceiling.position = CGPoint(x: CGFloat(i)*ceilingWidth, y: self.size.height - ceiling.size.height/2 )
+            ceiling.zPosition = 3
+            addChild(ceiling)
+            
+            let moveLeft = SKAction.moveBy(x: -ceilingWidth, y: 0, duration: 3)
+            let moveReset = SKAction.moveBy(x: ceilingWidth, y: 0, duration: 0)
+            let moveSequence = SKAction.sequence([moveLeft,moveReset])
+            
+            ceiling.run(SKAction.repeatForever(moveSequence))
+            
+            
+        }
+        
+    
+        
+        
+    }
+    
+    func setUpPipe() {
+        let width = self.size.width
+        let height = self.size.height
         
         let pipeUp = SKSpriteNode(imageNamed: "pipe")
         pipeUp.position = CGPoint(x: width/2, y: 0)
