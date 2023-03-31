@@ -131,6 +131,14 @@ self.addChild(land)
 4. resizeFill
 -  씬을 조정하지 않고 기기에 보여질 화면까지만 보여준다.
 
+<br>
+
+## 스프라이트 아틀라스
+
+<img width="1137" alt="스크린샷 2023-03-31 오후 5 06 06" src="https://user-images.githubusercontent.com/48616183/229062735-7d32a8e9-3dac-4a13-902a-3186cdffaa1d.png">
 
 
-
+### 장점
+-  그림파일을 불러들이는 횟수가 줄어준다
+-  메모리 최적화
+-  Xcode에서는 .spriteatlas 폴더에 있는 파일에 대해 컴파일타임에 최적화된 스프라이트아틀라스를 자동으로 작성해 준다.
