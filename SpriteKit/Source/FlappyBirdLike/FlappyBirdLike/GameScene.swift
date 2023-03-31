@@ -23,10 +23,29 @@ class GameScene: SKScene {
         let width = self.size.width
         let height = self.size.height
         
-        let bird = SKSpriteNode(imageNamed: "bird")
+       
+        
+        let bird = SKSpriteNode(imageNamed: "bird1")
         bird.position = CGPoint(x: width/2, y: 350)
         bird.zPosition = 4
         self.addChild(bird)
+        
+         // 코드로 애니메이션 삽입
+//        let birdTexture = SKTextureAtlas(named: "Bird")
+//        var aniArray = [SKTexture]()
+//
+//        for i in 1...birdTexture.textureNames.count {
+//            aniArray.append(SKTexture(imageNamed: "bird\(i)"))
+//        }
+//
+//        let flyingAnimation = SKAction.animate(with: aniArray, timePerFrame: 0.1)
+//        bird.run(.repeatForever(flyingAnimation))
+        
+        
+        //.sks 파일에서 flynig이라는 Action 가져오기
+        guard let flyingBySKS = SKAction(named: "flying") else {return}
+        bird.run(flyingBySKS)
+        
     }
     
     func createEnvironment() {

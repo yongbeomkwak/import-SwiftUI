@@ -142,3 +142,9 @@ self.addChild(land)
 -  그림파일을 불러들이는 횟수가 줄어준다
 -  메모리 최적화
 -  Xcode에서는 .spriteatlas 폴더에 있는 파일에 대해 컴파일타임에 최적화된 스프라이트아틀라스를 자동으로 작성해 준다.
+
+<br>
+
+## 애니메이션 만들기
+
+1. SpriteKit Action
