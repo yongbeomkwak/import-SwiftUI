@@ -194,3 +194,21 @@ self.addChild(land)
 -   0,1: 좌상당 기준
 -   1,0: 우하단 기준
 -   1,1: 우상단 기준
+
+<br>
+
+### 텍스트 정렬
+
+<img width="879" alt="스크린샷 2023-04-01 오후 7 22 51" src="https://user-images.githubusercontent.com/48616183/229280685-9d0bb7d6-f861-4667-aa66-aeceac0dd7ba.png">
+
+-  .vertical
+   -   .Baseline: 폰트기준 하단 (삐져 나올 수 있음)
+   -   .Bottom : 빠져가자지 않는 박스 하단
+   -   .Center : 센터
+   -   .Top: 상단
+
+-  .horizontal
+   - .Left: 왼쪽
+   - .Center: 중앙
+   - .Right: 오른쪽
+   
