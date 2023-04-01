@@ -13,14 +13,15 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         //초기화 진행
         
+        self.physicsWorld.contactDelegate = self // 앱안에서 일어나는 충돌을 게임씬이 관리함
+        //SKPhysicsContactDelegate 채택해야함
+        
+        self.physicsWorld.gravity = CGVector(dx: 0, dy: -9.8) // 중력
         createBird()
         createEnvironment()
         createInfinitePipe(4)
         
-        self.physicsWorld.contactDelegate = self // 앱안에서 일어나는 충돌을 게임씬이 관리함
-        //SKPhysicsContactDelegate 채택해야함
-        
-        self.physicsWorld.gravity = CGVector(dx: 0, dy: -9.8) // 중력 
+       
         
     }
     
@@ -34,7 +35,7 @@ class GameScene: SKScene {
         bird.position = CGPoint(x: width/2, y: 350)
         bird.zPosition = Layer.bird
         
-        bird.physicsBody = SKPhysicsBody(circleOfRadius: self.size.height/2)
+        bird.physicsBody = SKPhysicsBody(circleOfRadius: bird.size.height/2)
         bird.physicsBody?.categoryBitMask = PhysicsCategory.bird
         
         bird.physicsBody?.contactTestBitMask = PhysicsCategory.land | PhysicsCategory.pipe | PhysicsCategory.ceiling | PhysicsCategory.score
@@ -42,7 +43,8 @@ class GameScene: SKScene {
         
         bird.physicsBody?.collisionBitMask = PhysicsCategory.land | PhysicsCategory.pipe | PhysicsCategory.ceiling
         
-        bird.physicsBody?.isDynamic = false // 부딪혀도 움직이지 않게
+        bird.physicsBody?.isDynamic = true // 부딪히면 영향 받음
+        bird.physicsBody?.affectedByGravity = true // 중력 영향
         
         
         self.addChild(bird)
