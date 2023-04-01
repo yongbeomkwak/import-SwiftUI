@@ -15,7 +15,7 @@ class GameScene: SKScene {
         
         createBird()
         createEnvironment()
-        setUpPipe()
+        createInfinitePipe(4)
         
         
     }
@@ -29,6 +29,18 @@ class GameScene: SKScene {
         let bird = SKSpriteNode(imageNamed: "bird1")
         bird.position = CGPoint(x: width/2, y: 350)
         bird.zPosition = Layer.bird
+        
+        bird.physicsBody = SKPhysicsBody(circleOfRadius: self.size.height/2)
+        bird.physicsBody?.categoryBitMask = PhysicsCategory.bird
+        
+        bird.physicsBody?.contactTestBitMask = PhysicsCategory.land | PhysicsCategory.pipe | PhysicsCategory.ceiling | PhysicsCategory.score
+        
+        
+        bird.physicsBody?.collisionBitMask = PhysicsCategory.land | PhysicsCategory.pipe | PhysicsCategory.ceiling
+        
+        bird.physicsBody?.isDynamic = false // 부딪혀도 움직이지 않게
+        
+        
         self.addChild(bird)
         
          // 코드로 애니메이션 삽입
@@ -83,6 +95,11 @@ class GameScene: SKScene {
             land.position = CGPoint(x: CGFloat(i)*landWidth, y: 0)
             land.zPosition = Layer.land
             
+            land.physicsBody = SKPhysicsBody(rectangleOf: land.size,center: CGPoint(x: landWidth/2, y: land.size.height/2))
+            land.physicsBody?.categoryBitMask = PhysicsCategory.land
+            land.physicsBody?.affectedByGravity = false // 중력에 의해 떨어지지 않게 하기 위해
+            land.physicsBody?.isDynamic = false // 부딪혀도 움직이지 않게
+            
             addChild(land)
             
             let moveLeft = SKAction.moveBy(x: -landWidth, y: 0, duration: 20)
@@ -125,6 +142,12 @@ class GameScene: SKScene {
             
             ceiling.position = CGPoint(x: CGFloat(i)*ceilingWidth, y: self.size.height - ceiling.size.height/2 )
             ceiling.zPosition = Layer.ceiling
+            
+            ceiling.physicsBody = SKPhysicsBody(rectangleOf: ceiling.size,center: CGPoint(x: ceilingWidth/2, y: ceiling.size.height/2))
+            ceiling.physicsBody?.categoryBitMask = PhysicsCategory.ceiling
+            ceiling.physicsBody?.affectedByGravity = false // 중력에 의해 떨어지지 않게 하기 위해
+            ceiling.physicsBody?.isDynamic = false
+            
             addChild(ceiling)
             
             let moveLeft = SKAction.moveBy(x: -ceilingWidth, y: 0, duration: 3)
@@ -141,22 +164,80 @@ class GameScene: SKScene {
         
     }
     
-    func setUpPipe() {
+    func setUpPipe(pipeDistance:CGFloat) {
         let width = self.size.width
         let height = self.size.height
         
-        let pipeUp = SKSpriteNode(imageNamed: "pipe")
-        pipeUp.position = CGPoint(x: width/2, y: 0)
-        pipeUp.zPosition = Layer.pipe
-        self.addChild(pipeUp)
+        let envAtlas = SKTextureAtlas(named: "Environment")
+        let pipeTexture = envAtlas.textureNamed("pipe")
         
-        let pipeDown = SKSpriteNode(imageNamed: "pipe")
-        pipeDown.position = CGPoint(x: width/2, y: height + 100 )
+        let pipeDown = SKSpriteNode(texture: pipeTexture)
+    
         pipeDown.zPosition = Layer.pipe
-        pipeDown.xScale = -1 // x방향으로 180도 회전 (좌우 반전)
-        pipeDown.zRotation = .pi // 상하 반전
+        pipeDown.physicsBody = SKPhysicsBody(rectangleOf: pipeTexture.size())
+        pipeDown.physicsBody?.categoryBitMask = PhysicsCategory.pipe
+        pipeDown.physicsBody?.isDynamic = false
+        
+        
+        let pipeUp = SKSpriteNode(texture: pipeTexture)
+        
+        pipeUp.zPosition = Layer.pipe
+        pipeUp.xScale = -1 // x방향으로 180도 회전 (좌우 반전)
+        pipeUp.zRotation = .pi // 상하 반전
+        pipeUp.physicsBody = SKPhysicsBody(rectangleOf: pipeTexture.size())
+        pipeUp.physicsBody?.categoryBitMask = PhysicsCategory.pipe
+        pipeUp.physicsBody?.isDynamic = false
+       
+        let pipeCollision = SKSpriteNode(color: .red, size: CGSize(width: 1, height: self.size.height))
+        
+        pipeCollision.zPosition = Layer.pipe
+        pipeCollision.physicsBody = SKPhysicsBody(rectangleOf: pipeCollision.size)
+        pipeCollision.physicsBody?.categoryBitMask = PhysicsCategory.score
+        pipeCollision.physicsBody?.isDynamic = false
+        pipeCollision.name = "pipeCollision"
+        
         
         self.addChild(pipeDown)
+        self.addChild(pipeUp)
+        self.addChild(pipeCollision)
+        
+        //스프라이트 배치
+        
+        let max = self.size.height * 0.3
+        let xPos = self.size.width + pipeUp.size.width // 화면 너비 + 파이프 너비 = 화면 바깥
+        let yPos = CGFloat(arc4random_uniform(UInt32(max))) + envAtlas.textureNamed("land").size().height
+        // 화면 높이의 30% + 땅의 높이 만큼 올림
+        
+        let endPos = self.size.width + (pipeDown.size.width*2)
+        
+        pipeDown.position  = CGPoint(x: xPos, y: yPos)
+        pipeUp.position = CGPoint(x: xPos, y: pipeDown.position.y + pipeDistance + pipeUp.size.height )
+        
+        pipeCollision.position = CGPoint(x: xPos, y: self.size.height/2 )
+        
+        let moveAct = SKAction.moveBy(x: -endPos, y: 0, duration: 6)
+        let moveSeq = SKAction.sequence([moveAct,SKAction.removeFromParent()]) // 최적화를 위해, 사라지면 삭제
+        
+        pipeDown.run(moveSeq)
+        pipeUp.run(moveSeq)
+        pipeCollision.run(moveSeq)
+        
+        
+        
+        
+    }
+    
+    func createInfinitePipe(_ duration:TimeInterval)
+    {
+        let create = SKAction.run { [unowned self] in
+            self.setUpPipe(pipeDistance: 100)
+        }
+        
+        let wait = SKAction.wait(forDuration: duration)
+        let actSeq = SKAction.sequence([create,wait])
+        
+        run(SKAction.repeatForever(actSeq) )
+        
     }
 
 }
