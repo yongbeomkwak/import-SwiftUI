@@ -10,7 +10,13 @@ import SpriteKit
 class GameScene: SKScene {
     
     var bird = SKSpriteNode()
-    
+    var scoreLabel = SKLabelNode()
+    var score:Int = 0 {
+        didSet {
+            scoreLabel.text = "\(score)"
+        }
+    }
+ 
     override func didMove(to view: SKView) {
         //초기화 진행
         
@@ -21,8 +27,21 @@ class GameScene: SKScene {
         createBird()
         createEnvironment()
         createInfinitePipe(4)
+        createScore()
         
        
+        
+    }
+    
+    func createScore() {
+        scoreLabel = SKLabelNode(fontNamed: "AppleGothic")
+        scoreLabel.fontSize = 24
+        scoreLabel.fontColor = .white
+        scoreLabel.position = CGPoint(x: self.size.width/2, y: self.size.height - 60)
+        scoreLabel.zPosition = Layer.hud
+        scoreLabel.horizontalAlignmentMode = .center
+        scoreLabel.text = "\(score)"
+        addChild(scoreLabel)
         
     }
     
@@ -286,6 +305,7 @@ extension GameScene: SKPhysicsContactDelegate {
             print("pipe")
         case PhysicsCategory.score:
             print("score")
+            score += 1
             
         default:
             break

@@ -14,6 +14,7 @@ struct Layer {
     static let land: CGFloat = 3
     static let ceiling: CGFloat = 4
     static let bird: CGFloat = 5
+    static let hud: CGFloat = 10
     
 }
 
