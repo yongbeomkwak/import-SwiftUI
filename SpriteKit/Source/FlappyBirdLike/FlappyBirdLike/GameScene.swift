@@ -17,6 +17,10 @@ class GameScene: SKScene {
         createEnvironment()
         createInfinitePipe(4)
         
+        self.physicsWorld.contactDelegate = self // 앱안에서 일어나는 충돌을 게임씬이 관리함
+        //SKPhysicsContactDelegate 채택해야함
+        
+        self.physicsWorld.gravity = CGVector(dx: 0, dy: -9.8) // 중력 
         
     }
     
@@ -240,4 +244,9 @@ class GameScene: SKScene {
         
     }
 
+}
+
+
+extension GameScene: SKPhysicsContactDelegate {
+    
 }
