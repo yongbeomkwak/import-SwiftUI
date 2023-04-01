@@ -148,3 +148,36 @@ self.addChild(land)
 ## 애니메이션 만들기
 
 1. SpriteKit Action
+
+- 한 프레임당 발생하는 사이클
+
+<img width="885" alt="스크린샷 2023-03-31 오후 6 52 13" src="https://user-images.githubusercontent.com/48616183/229089830-2bfa3d71-61f6-43bf-a680-4d55100177cb.png">
+
+<br>
+
+## 충돌 판정
+
+### 1. physicsBody는 .categoryBitMask 속성으로 판정한다
+
+-  #### UInt32을 이용
+-  #### ex)
+   -  0 미사용
+   -  Player(001) = 1
+   -  Coin(010)  = 2
+   -  미사용(011) = 3 (미사용, 1이 두개 들어갔기 때뮨에)
+   -  적(100) = 4
+   -  충돌(101) = 1 + 4  (플레이어와 적과 충돌)
+
+### .collisionBitMask
+-  충돌을 체크해야 하는 객체마스크를 기입한다.
+
+### .contactTestBitMask
+-  두 객체가 접촉콜백으로 시스템에 알려준다.
+-  물리적 변화 없음
+-  접촉을 확인해야 하는 객체마스크를 기입한다.
+
+<br>
+
+### 노드에 따른 비용
+
+<img width="963" alt="스크린샷 2023-04-01 오후 3 21 03" src="https://user-images.githubusercontent.com/48616183/229269434-71c0a522-63db-42c8-b067-d1d314e4014d.png">
