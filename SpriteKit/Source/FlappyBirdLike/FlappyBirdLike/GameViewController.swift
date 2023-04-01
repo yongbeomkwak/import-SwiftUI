@@ -26,6 +26,7 @@ class GameViewController: UIViewController {
             
             view.showsFPS = true // FPS 보여주기
             view.showsNodeCount = true
+            view.showsPhysics = true // 피지스 바디 보여주기
         }
     }
 

@@ -9,6 +9,7 @@ import SpriteKit
 
 class GameScene: SKScene {
     
+    var bird = SKSpriteNode()
     
     override func didMove(to view: SKView) {
         //초기화 진행
@@ -31,7 +32,7 @@ class GameScene: SKScene {
         
        
         
-        let bird = SKSpriteNode(imageNamed: "bird1")
+        bird = SKSpriteNode(imageNamed: "bird1")
         bird.position = CGPoint(x: width/2, y: 350)
         bird.zPosition = Layer.bird
         
@@ -251,4 +252,40 @@ class GameScene: SKScene {
 
 extension GameScene: SKPhysicsContactDelegate {
     
+    func didBegin(_ contact: SKPhysicsContact) {
+        var  collideBody = SKPhysicsBody()
+        
+        
+        //비트마스크 큰게 플레이어
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+            collideBody = contact.bodyB
+            
+        } else {
+            
+            collideBody = contact.bodyA
+        }
+        
+        
+        let collideType = collideBody.categoryBitMask
+        
+        
+        switch collideType {
+            
+        case PhysicsCategory.land:
+            print("land")
+        case PhysicsCategory.ceiling:
+            print("cel")
+        case PhysicsCategory.pipe:
+            print("pipe")
+        case PhysicsCategory.score:
+            print("score")
+            
+        default:
+            break
+            
+            
+        }
+        
+        
+    }
 }
