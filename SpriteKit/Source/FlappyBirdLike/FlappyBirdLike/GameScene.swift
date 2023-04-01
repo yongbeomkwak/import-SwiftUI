@@ -252,6 +252,13 @@ class GameScene: SKScene {
 
 extension GameScene: SKPhysicsContactDelegate {
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.bird.physicsBody?.velocity = CGVector(dx: 0, dy: 0) // 속도 리셋
+        self.bird.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 7))
+        
+    }
+    
+    
     func didBegin(_ contact: SKPhysicsContact) {
         var  collideBody = SKPhysicsBody()
         
