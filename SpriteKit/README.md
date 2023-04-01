@@ -181,3 +181,16 @@ self.addChild(land)
 ### 노드에 따른 비용
 
 <img width="963" alt="스크린샷 2023-04-01 오후 3 21 03" src="https://user-images.githubusercontent.com/48616183/229269434-71c0a522-63db-42c8-b067-d1d314e4014d.png">
+
+<br>
+
+## AnchorPoint
+
+<img width="957" alt="스크린샷 2023-04-01 오후 7 19 28" src="https://user-images.githubusercontent.com/48616183/229280432-4b269a1a-189c-4481-866a-d4373d22703a.png">
+
+### 앵커포인트 : 어디를 기준으로 붙히냐
+-   0.5, 0.5 : 스프라이트의 중심을 기준으로
+-   0,0: 좌하단 기준
+-   0,1: 좌상당 기준
+-   1,0: 우하단 기준
+-   1,1: 우상단 기준
