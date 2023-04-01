@@ -34,7 +34,7 @@ class GameScene: SKScene {
     }
     
     func createScore() {
-        scoreLabel = SKLabelNode(fontNamed: "AppleGothic")
+        scoreLabel = SKLabelNode(fontNamed: "Minercraftory")
         scoreLabel.fontSize = 24
         scoreLabel.fontColor = .white
         scoreLabel.position = CGPoint(x: self.size.width/2, y: self.size.height - 60)
