@@ -294,7 +294,7 @@ class GameScene: SKScene {
     
     func recordBestScore() {
         
-        let key = "highScore"
+        let key = "bestScore"
         
         let userDefaults = UserDefaults.standard
         var bestSource = userDefaults.integer(forKey: key)
@@ -310,9 +310,25 @@ class GameScene: SKScene {
     func createGameOverBoard() {
         
         let gameOverBoard = SKSpriteNode(imageNamed: "gameoverBoard")
-        gameOverBoard.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
+        gameOverBoard.position = CGPoint(x: self.size.width/2, y: -gameOverBoard.size.height)
         gameOverBoard.zPosition = Layer.hud
         addChild(gameOverBoard)
+        
+        var medal = SKSpriteNode()
+        if score >= 10 {
+            medal = SKSpriteNode(imageNamed: "medalPlatinum")
+        } else if score >= 5{
+            medal = SKSpriteNode(imageNamed: "medalGold")
+        } else if score >= 3{
+            medal = SKSpriteNode(imageNamed: "medalSliver")
+        } else if score >= 1 {
+            medal = SKSpriteNode(imageNamed: "medalBronze")
+        }
+        
+        medal.position = CGPoint(x: -gameOverBoard.size.width * 0.27, y: gameOverBoard.size.height * 0.02)
+        
+        medal.zPosition = 0.1
+        gameOverBoard.addChild(medal)
         
         let scoreLabel = SKLabelNode(fontNamed: "Minercraftory")
         scoreLabel.fontSize = 13
@@ -334,6 +350,16 @@ class GameScene: SKScene {
         scoreLabel.zPosition = 0.1
         gameOverBoard.addChild(bestScoreLabel)
         
+        
+        let restartBtn = SKSpriteNode(imageNamed: "playBtn")
+        restartBtn.name = "restartBtn"
+        restartBtn.position = CGPoint(x: 0, y: -gameOverBoard.size.height * 0.35)
+        restartBtn.zPosition = 0.1
+        gameOverBoard.addChild(restartBtn)
+        
+        gameOverBoard.run(SKAction.sequence([SKAction.moveTo(y: self.size.height/2, duration: 1),SKAction.run {
+            self.speed = 0 // 모든 노드 속도 0
+        }]))
         
         
         
@@ -394,9 +420,20 @@ extension GameScene: SKPhysicsContactDelegate {
             
             
         case .dead:
-            let scene = GameScene(size: self.size)
-            let transition = SKTransition.doorsOpenHorizontal(withDuration: 1)
-            self.view?.presentScene(scene,transition: transition)
+            
+            let touch = touches.first
+            
+            if let location = touch?.location(in: self) {
+                let nodesArray = self.nodes(at: location)
+                
+                if nodesArray.first?.name == "restartBtn" {
+                    let scene = GameScene(size: self.size)
+                    let transition = SKTransition.doorsOpenHorizontal(withDuration: 1)
+                    self.view?.presentScene(scene,transition: transition)
+                }
+            }
+            
+            
         }
         
         
