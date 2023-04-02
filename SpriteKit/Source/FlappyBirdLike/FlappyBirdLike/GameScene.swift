@@ -17,6 +17,7 @@ class GameScene: SKScene {
     
     let cameraNode = SKCameraNode()
     
+    var bgmPlayer = SKAudioNode()
     var gameState = GameState.ready
     var bird = SKSpriteNode()
     var scoreLabel = SKLabelNode()
@@ -42,6 +43,11 @@ class GameScene: SKScene {
         cameraNode.position.x = self.size.width / 2
         cameraNode.position.y = self.size.height / 2
         self.addChild(cameraNode)
+        
+        
+        bgmPlayer = SKAudioNode(fileNamed: "bgm.mp3")
+        bgmPlayer.autoplayLooped = true
+        self.addChild(bgmPlayer )
         
     }
     
@@ -372,6 +378,8 @@ class GameScene: SKScene {
         self.gameState = .dead
         self.bird.removeAllActions() //새의 모든 액션 삭제
         createGameOverBoard()
+        
+        self.bgmPlayer.run(.stop())
         //self.isPaused = true
     }
     
