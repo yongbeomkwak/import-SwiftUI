@@ -7,8 +7,15 @@
 
 import SpriteKit
 
+enum GameState {
+    case ready
+    case playing
+    case dead
+}
+
 class GameScene: SKScene {
     
+    var gameState = GameState.ready
     var bird = SKSpriteNode()
     var scoreLabel = SKLabelNode()
     var score:Int = 0 {
@@ -26,7 +33,7 @@ class GameScene: SKScene {
         self.physicsWorld.gravity = CGVector(dx: 0, dy: -9.8) // 중력
         createBird()
         createEnvironment()
-        createInfinitePipe(4)
+        
         createScore()
         
        
@@ -63,7 +70,7 @@ class GameScene: SKScene {
         
         bird.physicsBody?.collisionBitMask = PhysicsCategory.land | PhysicsCategory.pipe | PhysicsCategory.ceiling
         
-        bird.physicsBody?.isDynamic = true // 부딪히면 영향 받음
+        bird.physicsBody?.isDynamic = false // 부딪히면 영향 받음
         bird.physicsBody?.affectedByGravity = true // 중력 영향
         
         
@@ -265,6 +272,11 @@ class GameScene: SKScene {
         run(SKAction.repeatForever(actSeq) )
         
     }
+    
+    func gameOver() {
+        self.gameState = .dead
+        self.isPaused = true
+    }
 
 }
 
@@ -272,8 +284,28 @@ class GameScene: SKScene {
 extension GameScene: SKPhysicsContactDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.bird.physicsBody?.velocity = CGVector(dx: 0, dy: 0) // 속도 리셋
-        self.bird.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 7))
+        
+        switch gameState {
+            
+        case .ready:
+            
+            gameState = .playing
+            self.bird.physicsBody?.isDynamic = true
+            self.bird.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 10)) 
+            createInfinitePipe(4)
+            
+        case .playing:
+            self.bird.physicsBody?.velocity = CGVector(dx: 0, dy: 0) // 속도 리셋
+            self.bird.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 7))
+            
+            
+        case .dead:
+            let scene = GameScene(size: self.size)
+            let transition = SKTransition.doorsOpenHorizontal(withDuration: 1)
+            self.view?.presentScene(scene,transition: transition)
+        }
+        
+        
         
     }
     
@@ -298,11 +330,11 @@ extension GameScene: SKPhysicsContactDelegate {
         switch collideType {
             
         case PhysicsCategory.land:
-            print("land")
+            gameOver()
         case PhysicsCategory.ceiling:
             print("cel")
         case PhysicsCategory.pipe:
-            print("pipe")
+            gameOver()
         case PhysicsCategory.score:
             print("score")
             score += 1
