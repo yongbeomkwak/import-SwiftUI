@@ -188,6 +188,8 @@ self.addChild(land)
 
 <img width="957" alt="스크린샷 2023-04-01 오후 7 19 28" src="https://user-images.githubusercontent.com/48616183/229280432-4b269a1a-189c-4481-866a-d4373d22703a.png">
 
+<br>
+
 ### 앵커포인트 : 어디를 기준으로 붙히냐
 -   0.5, 0.5 : 스프라이트의 중심을 기준으로
 -   0,0: 좌하단 기준
@@ -211,4 +213,51 @@ self.addChild(land)
    - .Left: 왼쪽
    - .Center: 중앙
    - .Right: 오른쪽
-   
+
+## 스테이트 머신
+
+> ### 유한 상태 기계(Finite State Machine, FSM)
+>
+> ###  게임의 요소를 잘게 분해하여 하나의 상태로 만들고 그 상태들의 집합을 관리하거나 전환하는 관리자를 스테이트 머신이라 한다.
+
+
+<br>
+
+## SKAction
+
+### 노드에 움직임을 부여하는 클래스
+
+
+1. Moving
+- To: A부터 B까지 , By: Amount를 지정하면 그 만큼
+-  .moveTo,By:  a부터 b까지 이동 
+-  .roateTo,By: 회전 
+-  .scaleTo,By: 배수를 주면 커졌다 ,작아졌따
+-  .resizeTo,By: 절대값을 주면 , 확대 또는 축소
+-  .followPath: SKShapeNode로 Path를 그려주면 그 Path에 따라 이동한다.
+-  .speed: 동작의 스피드 
+
+2. Shape
+-  .setTexture: 이미 있는 위에 텍스쳐를 합쳐주는
+-  .colorize: 노드의 색깔을 변경
+-  .fadeAlpha: 노드에 알파값 적용 
+
+3. Timing
+-  .sequence: 지정된 SKAction을 순서대로 실행줌
+<img width="558" alt="스크린샷 2023-04-02 오후 2 23 25" src="https://user-images.githubusercontent.com/48616183/229333162-5ce3b5a5-6456-4f68-a4ed-6287dad03b82.png">
+
+-  .group: 지정된 SKAction들을 동시에 실행, 끝나는 시간은 지정된 Action 중 가장 긴 것을 기준으로 같이 종료됨
+<img width="408" alt="스크린샷 2023-04-02 오후 2 24 11" src="https://user-images.githubusercontent.com/48616183/229333189-6a786b01-9b13-4cb4-bd2a-03965a96c578.png">
+
+- .wait:Duration만큼 멈춤
+<img width="560" alt="스크린샷 2023-04-02 오후 2 26 24" src="https://user-images.githubusercontent.com/48616183/229333274-2c338ae5-0148-4232-9d42-88360746694f.png">
+
+-  .repeat: 정해진 반복
+-  .repeatForever: 무한히 반복
+
+- .timingMode: 액션의 속도
+   -  .linear: 일정한 속도
+   -  .easeIn: 초반에 느리고 후반에 빠르게
+   -  .easeOut: 초반에 빠르고 후반에 느리게
+   -  .easeInEaseOut: 초반 느림, 중간 빠름, 후반 느림
+ 
