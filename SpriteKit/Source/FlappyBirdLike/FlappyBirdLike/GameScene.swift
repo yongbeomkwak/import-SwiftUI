@@ -45,6 +45,20 @@ class GameScene: SKScene {
         
     }
     
+    override func update(_ currentTime: TimeInterval) {
+        let rotation = self.bird.zRotation
+        
+        if rotation > 0 {
+            self.bird.zRotation = min(rotation,0.7)
+        } else {
+            self.bird.zRotation = max(rotation,-0.7)
+        }
+        
+        if gameState == .dead {
+            self.bird.physicsBody?.velocity.dx = .zero
+        }
+    }
+    
     func createScore() {
         scoreLabel = SKLabelNode(fontNamed: "Minercraftory")
         scoreLabel.fontSize = 24
@@ -278,12 +292,60 @@ class GameScene: SKScene {
         
     }
     
-    func gameOver() {
-        self.gameState = .dead
+    func recordBestScore() {
         
+        let key = "highScore"
+        
+        let userDefaults = UserDefaults.standard
+        var bestSource = userDefaults.integer(forKey: key)
+        
+        if self.score > bestSource {
+            bestSource = score
+            userDefaults.set(bestSource, forKey: key)
+        }
+        
+        userDefaults.synchronize() // 최종 기록
+    }
+    
+    func createGameOverBoard() {
+        
+        let gameOverBoard = SKSpriteNode(imageNamed: "gameoverBoard")
+        gameOverBoard.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
+        gameOverBoard.zPosition = Layer.hud
+        addChild(gameOverBoard)
+        
+        let scoreLabel = SKLabelNode(fontNamed: "Minercraftory")
+        scoreLabel.fontSize = 13
+        scoreLabel.fontColor = .orange
+        scoreLabel.text = "\(self.score)"
+        scoreLabel.horizontalAlignmentMode = .left
+        scoreLabel.position = CGPoint(x: gameOverBoard.size.width * 0.35 , y: gameOverBoard.size.height * 0.07)
+        scoreLabel.zPosition = 0.1
+        gameOverBoard.addChild(scoreLabel)
+        
+        
+        let bestScore = UserDefaults.standard.integer(forKey: "bestScore")
+        let bestScoreLabel = SKLabelNode(fontNamed: "Minercraftory")
+        bestScoreLabel .fontSize = 13
+        bestScoreLabel .fontColor = .orange
+        bestScoreLabel .text = "\(bestScore)"
+        bestScoreLabel .horizontalAlignmentMode = .left
+        bestScoreLabel .position = CGPoint(x: gameOverBoard.size.width * 0.35 , y: -gameOverBoard.size.height * 0.07)
+        scoreLabel.zPosition = 0.1
+        gameOverBoard.addChild(bestScoreLabel)
+        
+        
+        
+        
+    }
+    
+    func gameOver() {
         
         damageEffect()
         cameraShake()
+        self.gameState = .dead
+        self.bird.removeAllActions() //새의 모든 액션 삭제
+        createGameOverBoard()
         //self.isPaused = true
     }
     
@@ -362,11 +424,18 @@ extension GameScene: SKPhysicsContactDelegate {
         switch collideType {
             
         case PhysicsCategory.land:
-            gameOver()
+            
+            if gameState == .playing {
+                gameOver()
+            }
+            
+            
         case PhysicsCategory.ceiling:
             print("cel")
         case PhysicsCategory.pipe:
-            gameOver()
+            if gameState == .playing {
+                gameOver()
+            }
         case PhysicsCategory.score:
             print("score")
             score += 1
