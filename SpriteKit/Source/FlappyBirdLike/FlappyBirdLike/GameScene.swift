@@ -387,6 +387,11 @@ class GameScene: SKScene {
         flashNode.run(actionSequence)
      
         
+        let wait = SKAction.wait(forDuration: 1)
+        let soundSequence = SKAction.sequence([SoundFX.hit,wait,SoundFX.die])
+        
+        run(soundSequence)
+        
     }
     
     func cameraShake(){
@@ -415,6 +420,7 @@ extension GameScene: SKPhysicsContactDelegate {
             createInfinitePipe(4)
             
         case .playing:
+            self.run(SoundFX.wing)
             self.bird.physicsBody?.velocity = CGVector(dx: 0, dy: 0) // 속도 리셋
             self.bird.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 7))
             
@@ -474,9 +480,8 @@ extension GameScene: SKPhysicsContactDelegate {
                 gameOver()
             }
         case PhysicsCategory.score:
-            print("score")
             score += 1
-            
+            self.run(SoundFX.point)
         default:
             break
             
