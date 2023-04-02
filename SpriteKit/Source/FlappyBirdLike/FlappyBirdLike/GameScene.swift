@@ -15,6 +15,8 @@ enum GameState {
 
 class GameScene: SKScene {
     
+    let cameraNode = SKCameraNode()
+    
     var gameState = GameState.ready
     var bird = SKSpriteNode()
     var scoreLabel = SKLabelNode()
@@ -36,7 +38,10 @@ class GameScene: SKScene {
         
         createScore()
         
-       
+        camera = cameraNode
+        cameraNode.position.x = self.size.width / 2
+        cameraNode.position.y = self.size.height / 2
+        self.addChild(cameraNode)
         
     }
     
@@ -59,7 +64,7 @@ class GameScene: SKScene {
        
         
         bird = SKSpriteNode(imageNamed: "bird1")
-        bird.position = CGPoint(x: width/2, y: 350)
+        bird.position = CGPoint(x: width/4, y: height/2)
         bird.zPosition = Layer.bird
         
         bird.physicsBody = SKPhysicsBody(circleOfRadius: bird.size.height/2)
@@ -278,6 +283,7 @@ class GameScene: SKScene {
         
         
         damageEffect()
+        cameraShake()
         //self.isPaused = true
     }
     
@@ -293,6 +299,15 @@ class GameScene: SKScene {
         flashNode.run(actionSequence)
      
         
+    }
+    
+    func cameraShake(){
+        let moveLeft = SKAction.moveTo(x: self.size.width/2 - 5, duration: 0.1)
+        let moveRight = SKAction.moveTo(x: self.size.width/2 + 5, duration: 0.1)
+        let moveReset = SKAction.moveTo(x: self.size.width/2 , duration: 0.1)
+        let shakeAction = SKAction.sequence([moveLeft,moveRight,moveLeft,moveRight,moveReset])
+        shakeAction.timingMode = .easeInEaseOut
+        self.cameraNode.run(shakeAction)
     }
 
 }
