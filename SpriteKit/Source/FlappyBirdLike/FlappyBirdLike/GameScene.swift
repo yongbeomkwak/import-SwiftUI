@@ -275,7 +275,24 @@ class GameScene: SKScene {
     
     func gameOver() {
         self.gameState = .dead
-        self.isPaused = true
+        
+        
+        damageEffect()
+        //self.isPaused = true
+    }
+    
+    func damageEffect(){
+        let flashNode = SKSpriteNode(color: UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0), size: self.size)
+        
+        let actionSequence = SKAction.sequence([SKAction.wait(forDuration: 0.01),SKAction.removeFromParent()])
+        
+        flashNode.name = "flashNode"
+        flashNode.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
+        flashNode.zPosition = Layer.hud
+        addChild(flashNode)
+        flashNode.run(actionSequence)
+     
+        
     }
 
 }
@@ -291,7 +308,7 @@ extension GameScene: SKPhysicsContactDelegate {
             
             gameState = .playing
             self.bird.physicsBody?.isDynamic = true
-            self.bird.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 10)) 
+            self.bird.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 10))
             createInfinitePipe(4)
             
         case .playing:
