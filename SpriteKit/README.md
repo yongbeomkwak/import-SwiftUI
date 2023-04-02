@@ -261,3 +261,42 @@ self.addChild(land)
    -  .easeOut: 초반에 빠르고 후반에 느리게
    -  .easeInEaseOut: 초반 느림, 중간 빠름, 후반 느림
  
+
+## 사운드
+
+### Sound Effect
+-  재생 후 종료되는 사운드
+-  SKAction.playSoundFileNamed
+
+### BGM
+- 여러가지 효과가 필요한 사운드
+-  SKAudionode
+
+
+<br>
+
+## 파티클 이미터
+
+-  입자를 방출하는 특수효과
+-  전용 에디터를 이용하면 손쉽게 만들 수 있음
+
+### 파티클 이미터 속성
+-  Range: 범위
+-  스피디의 단위 = point/second
+-  Texture: 입자로 사용할 텍스처
+-  Emitter Birthrate: 초당 생성될 입자 수
+-  Emitter Maximum: 생성되는 입자의 총 개수 (0은 무한)
+-  Lifetime: 한 개의 입자가 사라질 때까지의 시간(초)
+-  Position : 입자 발생하는 범위
+-  Angle: 입자의 초기발생 각도
+-  Speed: 입자의 초기 속도
+-  Acceleration: 입자에 가해진 가속도
+-  Alpha: 입자의 투명도
+-  Scale: 입자의 크기
+-  Rotation: 입자의 회전 양
+-  Color Blend: 지정한 색을 얼마나 반영할 것인 지
+-  Color Ramp: 입자의 색
+-  Blend Mode: 입자의 블렌딩 모드, 초기값은 Add
+   -  Add는 검은 배경에서 에디터에서와 동일하게 보이거나 흰 배경에서 하얗게 변하는 문제가 있음
+   -  블렌딩 모드가 Alpha이면 배경색의 영향을 안 받지만 Add와는 다르게 뿌연 효과가 들어간다.
+   -  Add모드와 SkEffectNode를 조합하면 문제 해결
