@@ -1,5 +1,5 @@
 # Shape
-- 여러가지 모양의 도형을 생성할 수 있는 component
+- 여러가지 모양의 도형을 생성할 수 있는 뷰
 
 ### Shape 속성
 - modifiers를 통해 shape의 다양한 속성을 추가할 수 있다.

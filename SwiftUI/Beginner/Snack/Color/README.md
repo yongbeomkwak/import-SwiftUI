@@ -1,5 +1,5 @@
 # Color
-- Components의 색상을 변경
+- 뷰의 색상을 변경
 
 ### System Color
 - 시스템에서 미리 지정된 색상을 사용할 수 있다.
@@ -26,7 +26,7 @@ RoundedRectangle(cornerRadius: 24.0)
 ```
 
 ### Shadow
-* 원하는 색상으로 오브젝트에 그림자를 추가할 수 있다.
+* 원하는 색상으로 뷰에 그림자를 추가할 수 있다.
 ```swift
 Rectangle()
     .frame(width: 300, height: 200)

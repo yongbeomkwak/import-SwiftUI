@@ -1,5 +1,5 @@
 # Frame
-- 화면의 여러 요소들을 감싸는 사각형의 영역
+- 화면의 여러 뷰들을 감싸는 사각형의 영역
 
 ### Frame 영역
 - frame 영역을 지정해주지 않으면 콘텐츠 자체가 차지하는 영역이 기본 영역이다.
@@ -16,7 +16,7 @@ Text("Hello, World!")
 ```
 
 ### Frame 정렬
-- frame 영역을 기준으로 frame 내부의 요소들을 정렬할 수 있다.
+- frame 영역을 기준으로 frame 내부의 뷰들을 정렬할 수 있다.
 ```swift
 Text("Hello, World!")
     .background(Color.red)

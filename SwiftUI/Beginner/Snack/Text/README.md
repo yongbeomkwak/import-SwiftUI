@@ -1,8 +1,8 @@
 # Text
-- 텍스트 입력하고 표시할 수 있는 componet
+- 텍스트 입력하고 표시할 수 있는 뷰
 
 ### Modifiers
-- modifiers를 통해 components의 여러 속성들을 추가 및 변경할 수 있다.
+- modifiers를 통해 뷰의 여러 속성들을 추가 및 변경할 수 있다.
 ```swift
 Text("Hello, World!")
     .font(.title)

@@ -1,5 +1,5 @@
 # Gradients
-- Component의 색상을 그라디언트로 변경
+- 뷰의 색상을 그라디언트로 변경
 
 ### LinearGradient
 - 선형 그라디언트를 추가할 수 있다.

@@ -1,5 +1,5 @@
 # Icons
-- Image를 이용해 원하는 아이콘 생성
+- Image 뷰를 이용해 원하는 아이콘 생성
 
 ### System Icons
 - Apple의 SF Symbols를 활용해 기본 시스템 아이콘을 사용할 수 있다.

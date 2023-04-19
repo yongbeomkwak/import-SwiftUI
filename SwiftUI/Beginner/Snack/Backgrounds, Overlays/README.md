@@ -1,8 +1,8 @@
 # Backgrounds, Overlays
-- 요소 뒷면 혹은 앞면에 다양한 요소를 추가할 수 있는 modifier
+- 뷰 뒷면 혹은 앞면에 다양한 뷰를 추가할 수 있는 modifier
 
 ### Backgrounds
-- 요소 뒷면에 다양한 요소들을 추가할 수 있다.
+- 뷰 뒷면에 다양한 뷰들을 추가할 수 있다.
 ```swift
 Text("Hello, World!")
     .background(
@@ -43,7 +43,7 @@ Text("Hello, World!")
 ```
 
 ### Overlays
-- 요소 앞면에 다양한 요소들을 추가할 수 있다.
+- 뷰 앞면에 다양한 뷰들을 추가할 수 있다.
 ```swift
 Circle()
     .fill(Color.pink)
@@ -55,8 +55,8 @@ Circle()
         Circle() // 도형 추가
     )
 ```
-- Overlay안의 요소에 Overlay를 추가할 수 있다.(Backgrounds도 동일)
-- 요소를 기준으로 Overlay를 정렬할 수 있다.(Backgrounds도 동일)
+- Overlay안의 뷰에 Overlay를 추가할 수 있다.(Backgrounds도 동일)
+- 뷰를 기준으로 Overlay를 정렬할 수 있다.(Backgrounds도 동일)
 ```swift
 Circle()
     .frame(width: 100, height: 100)
@@ -68,5 +68,5 @@ Circle()
                 Text("1")
                     .foregroundColor(.white)
             )
-        , alignment: .bottomTrailing) // 요소 기준 정렬
+        , alignment: .bottomTrailing) // 뷰 기준 정렬
 ```
