@@ -1,4 +1,4 @@
-# #2 Color
+# #4 Color
 ## primary, secondary color
 
 ```
