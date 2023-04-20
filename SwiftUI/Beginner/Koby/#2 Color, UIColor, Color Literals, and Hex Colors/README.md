@@ -1,4 +1,4 @@
-# #2 Color, UIColor, Color Literals, and Hex Colors
+# #2 Color
 ## primary, secondary color
 
 ```
