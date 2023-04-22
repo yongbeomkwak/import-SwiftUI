@@ -47,7 +47,8 @@ primary는 라아트모드에서는 기본적으로 Black이고, 다크모드에
 ```swift
         RoundedRectangle(cornerRadius: 25)
             .frame(width: 300, height: 200)
-            .shadow(color: Color.red.opacity(0.3), radius: 10, x: 0, y: 20)
+            .shadow(color: Color.red.opacity(0.3), radius: 10, x: 0, y: 20) 
+            //x값은 오른쪽으로 증가, y값은 아래로 증가
 ```
 <img width="604" alt="스크린샷 2023-04-20 오후 1 42 07" src="https://user-images.githubusercontent.com/87987002/233260079-c5f5f865-98c7-41a5-9121-26721d871f66.png">
 

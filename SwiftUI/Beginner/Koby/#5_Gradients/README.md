@@ -55,7 +55,7 @@ RoundedRectangle(cornerRadius: 25)
             .fill(
                 AngularGradient(gradient: Gradient(colors: [Color.red, Color.blue]),
                                 center: .center,
-                                angle: .degrees(180 + 45))
+                                angle: .degrees(180 + 45))  //오른쪽은 0도, 왼쪽은 180도
             )
 ```
 
