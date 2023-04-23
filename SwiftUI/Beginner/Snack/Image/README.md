@@ -16,7 +16,7 @@ Image("testImage")
     .scaledToFill() // aspectRatio와 동일 효과
     .frame(width: 300, height: 250)
 ```
-![업로드중..](blob:https://velog.io/05f02712-0a52-4e76-9015-e3911d085fe9)
+![](https://velog.velcdn.com/images/snack/post/ae39a2c4-a34f-4f4a-847b-0468ef92448d/image.png)
 ```swift
 Image("testImage")
     .resizable()
@@ -24,7 +24,7 @@ Image("testImage")
     .scaledToFit() // aspectRatio와 동일 효과
     .frame(width: 300, height: 250)
 ```
-![업로드중..](blob:https://velog.io/d8cc5c9e-75e8-4916-aac2-addf1179d77d)
+![](https://velog.velcdn.com/images/snack/post/47cb6d96-057e-4097-82a1-60f4321c8d17/image.png)
 
 ### Image 클리핑 마스크
 - 이미지를 원하는 모양으로 클리핑 마스크를 씌울 수 있다.
@@ -52,4 +52,4 @@ Image("apple")
 - 이미지 에셋의 Attributes inspector에서 이미지의 렌더링 모드를 사전에 설정할 수 있다.
 - 렌더링 모드를 사전에 설정하면 `.renderingMode(.template)`을 입력하지 않아도 template 모드가 적용된다.
 
-![업로드중..](blob:https://velog.io/d75975b2-64dd-486f-940f-fcdb8621e3b7)
+![](https://velog.velcdn.com/images/snack/post/75685878-60c1-4d07-9904-af191300c8cc/image.png)
