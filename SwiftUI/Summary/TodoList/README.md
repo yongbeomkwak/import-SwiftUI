@@ -90,7 +90,7 @@ struct ItemModel:Identifiable {
 
 ### `@ObservedObject` 프로퍼티 래퍼
 
--   ObservedObject에서 가끔 만나는 문제점 🆘
+-    🆘 ObservedObject에서 가끔 만나는 문제점
     
     상황
     
@@ -106,11 +106,11 @@ struct ItemModel:Identifiable {
 -   StateObject의 공식 문서의 소개는 아래처럼 되어있다.
     >   A state object behaves like an observed object, except that SwiftUI knows to create and manage a single object instance for a given view instance, regardless of how many times it recreates the view.
 
-- 이 문장을 보면 StateObject는 ObservedObject와 거의 똑같으나, 이 StateObject는 하나의 객체로 만들어지고, View가 얼마나 초기화되든지 상관없이 별개의 객체로 관리된다.
+이 문장을 보면 StateObject는 ObservedObject와 거의 똑같으나, 이 StateObject는 하나의 객체로 만들어지고, View가 얼마나 초기화되든지 상관없이 별개의 객체로 관리된다.
 
--   StateObject로 생성된 객체는 View의 라이프 사이클에 상관없이, SwiftUI가 View와 별개의 메모리 공간에 저장해 데이터를 안전하게 보관하도록 할 것이다.
+StateObject로 생성된 객체는 View의 라이프 사이클에 상관없이, SwiftUI가 View와 별개의 메모리 공간에 저장해 데이터를 안전하게 보관하도록 할 것이다.
 
-- 애플이 추천하는 StateObject와 ObservedObject의 사용법은 Observable Object를 처음 초기화할 때는 StateObject를 사용하고, 이미 객체화된 것을 넘겨 받을 때 ObservedObject의 사용을 추천하고 있다. 약간 아래와 같은 느낌일 것이다.
+애플이 추천하는 StateObject와 ObservedObject의 사용법은 Observable Object를 처음 초기화할 때는 StateObject를 사용하고, 이미 객체화된 것을 넘겨 받을 때 ObservedObject의 사용을 추천하고 있다. 약간 아래와 같은 느낌일 것이다.
 
 <br>
 
@@ -129,11 +129,11 @@ struct LowerView: View {
 }
 ```
 
--   이런 식으로 상위 View에서 객체로 만들어서 따로 저장해두고, 하위 View도 이 Observable Object의 변화를 감지하고, 같은 정보에 접근할 수 있도록 할 수 있을 것이다.
+이런 식으로 상위 View에서 객체로 만들어서 따로 저장해두고, 하위 View도 이 Observable Object의 변화를 감지하고, 같은 정보에 접근할 수 있도록 할 수 있을 것이다.
 
--   약간 State-Binding 관계와 StateObject-ObservedObject 관계가 유사하다고 생각할 수 있을 것 같다. Binding을 먼저 만들고 State를 만드는 느낌
+약간 State-Binding 관계와 StateObject-ObservedObject 관계가 유사하다고 생각할 수 있을 것 같다. Binding을 먼저 만들고 State를 만드는 느낌
 
--  #### 결론
-    -   StateObject는 ObservedObject 와 같이 동작합니다. 
-    - 차이점은 SwiftUI가 뷰를 몇번이나 다시 만드는 지 상관없이 주어진 view instance에 대해 single object instance를 만들고 관리한다는 점입니다. 
+#### 결론
+-   StateObject는 ObservedObject 와 같이 동작합니다. 
+- 차이점은 SwiftUI가 뷰를 몇번이나 다시 만드는 지 상관없이 주어진 view instance에 대해 single object instance를 만들고 관리한다는 점입니다. 
 
