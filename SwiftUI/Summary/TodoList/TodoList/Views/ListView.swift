@@ -9,20 +9,17 @@ import SwiftUI
 
 struct ListView: View {
     
-    @State var items: [ItemModel] = [
-        
-        ItemModel(title: "First Title", isCompleted: false),
-        ItemModel(title: "Second Title", isCompleted: false),
-        ItemModel(title: "Third Title", isCompleted: false)
-        
-    ]
+    @EnvironmentObject var listViewModel: ListViewModel
     
     var body: some View {
+        
         List {
-            ForEach(items,id: \.self.id){ item in
+            ForEach(listViewModel.items,id: \.self.id){ item in
                 ListRowView(item:item)
                 
             }
+            .onDelete(perform: listViewModel.deleteItem)
+            .onMove(perform: listViewModel.moveItem)
         }
         .listStyle(PlainListStyle()) // 밑줄 구분자 있는 스타일
         .navigationTitle("Todo List ✏️")
@@ -45,6 +42,7 @@ struct ListView_Previews: PreviewProvider {
         NavigationView {
             ListView()
         }
+        .environmentObject(ListViewModel())
     }
 }
 

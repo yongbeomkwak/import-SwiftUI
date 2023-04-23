@@ -41,6 +41,17 @@ List {
 }
 ```
 
+### 3. ForEach
+```swift
+
+ForEach(listViewModel.items,id: \.self.id){ item in
+    ListRowView(item:item)  
+}
+.onDelete(perform: listViewModel.deleteItem)
+.onMove(perform: listViewModel.moveItem)
+
+```
+
 ---
 
 <br>
@@ -90,9 +101,9 @@ struct ItemModel:Identifiable {
 
 ### `@ObservedObject` 프로퍼티 래퍼
 
--    🆘 ObservedObject에서 가끔 만나는 문제점
+#### 🆘 ObservedObject에서 가끔 만나는 문제점
     
-    상황
+-   상황
     
     -   상위의 State 변수가 변화하면, 해당 변수를 사용하고 있는 하위 View들은 모두 초기화된다. 
     -   그러면 하위에 있떤 ViewModel 도 초기화된다.
@@ -136,4 +147,84 @@ struct LowerView: View {
 #### 결론
 -   StateObject는 ObservedObject 와 같이 동작합니다. 
 - 차이점은 SwiftUI가 뷰를 몇번이나 다시 만드는 지 상관없이 주어진 view instance에 대해 single object instance를 만들고 관리한다는 점입니다. 
+
+<br>
+
+### `@EnvironmentObject` 프로퍼티 래퍼
+
+#### 정의
+-   MVVM 패턴에서 View와 ViewModel의 상호 액션을 취할때 사용하지만 ObservableObject와 다른 점은 마치 싱글톤처럼 사용될 수 있다는 데에 있다.
+- EnvironmentObject는 한 객체가 사용될 부모 뷰의 레이아웃이 구성될때 최초로 초기화를 하여 사용될 수 있도록 구성한다. 
+-   그리고 이 객체는 SwiftUI 환경(메모리)에 저장되며 뷰에서 뷰로 참조체를 전달할 필요 없이 부모 뷰의 모든 하위 뷰에서 접근에 가능하다. 
+-   싱글톤 처럼 하나의 객체가 메모리에 생성되어 사용할 수 있게 되는 것이다.
+
+#### 언제 사용?
+-  동일한 객체에 접근해야 하는 하위 뷰가 다수라면 참조체를 일일이 전달해야하는 번거롭고 복잡한 상황이 연출될 수 있다. 
+- 이럴 경우에 @Environment를 사용한다면 참조체를 전달할 필요없이 선언만으로 동일한 객체에 접근할 수가 있다. 
+
+#### 예
+
+1. 사용할 객체
+
+```swift
+class GameSettings: ObservableObject { // 마찬가지로 ObservableObject 프로토콜을 따른다.
+    @Published var score = 0 // 구독할 변수
+}
+```
+
+2. 루트 뷰
+
+```swift
+
+struct ContentView: View {
+    @StateObject var settings = GameSettings() // 동일하게 접근될 객체
+
+    var body: some View {
+        NavigationView {
+            VStack {
+                Button("Increase Score") {
+                    settings.score += 1
+                }
+
+                NavigationLink(destination: FirstView()) { // 참조체를 전달하지 않는 것에 주목해보자.
+                    Text("Show First View")
+                }
+                
+                NavigationLink(destination: SecondView()) {
+                    Text("Show Second View")
+                }
+            }
+            .frame(height: 200)
+        } // 이제 NavigationView 의 하위 뷰들에서 동일한 GameSetting() 객체인 settings에 접근할 수 있다.(FirstView, SecondView)
+        .environmentObject(settings) 
+    }
+}
+
+```
+
+3. 하위 뷰
+```swift
+
+struct FirstView: View {
+    @EnvironmentObject var settings: GameSettings // ContentView에서 선언된 settings이다. 즉 동일한 하나의 객체
+
+    var body: some View {
+        Text("Score: \(settings.score)")
+    }
+}
+
+struct SecondView: View {
+    @EnvironmentObject var settings: GameSettings // ContentView에서 선언된 settings이다. 즉 동일한 하나의 객체
+
+    var body: some View {
+      VStack {
+          Text("Score: \(settings.score)")
+
+          NavigationLink(destination: ThirdView()) { // 참조체를 전달하지 않는다!!
+                Text("Show Third View")
+          }
+    }
+}
+
+```
 
