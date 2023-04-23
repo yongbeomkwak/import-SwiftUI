@@ -228,3 +228,58 @@ struct SecondView: View {
 
 ```
 
+<br>
+
+### `@Environment` 프로퍼티 래퍼
+
+#### 정의
+-   @Environment라는 프로퍼티 래퍼는 읽기 전용으로 특정 뷰에서 EnvironmentValues의 특정 요소를 읽어와 뷰 구성에 반영할 때 사용한다.
+
+#### [종류](https://developer.apple.com/documentation/swiftui/environmentvalues)
+
+```swift
+@Environment(\.colorScheme) private var colorScheme // 다크모드,노말모드
+
+
+```
+
+#### 커스텀
+-   keyPath와 value를 직접 정의하여 사용
+    -   keyPath - EnvironmentKey를 준수하는 구조체
+    -   values - EnvironmentValues를 extension하여 computed property로 value 
+
+```swift
+// key 정의
+private struct CaptionColorKey: EnvironmentKey {
+  static let defaultValue = Color(.secondarySystemBackground)
+}
+
+// value 정의
+extension EnvironmentValues {
+  var captionBackgroundColor: Color {
+    get { self[CaptionColorKey.self] }
+    set { self[CaptionColorKey.self] = newValue }
+  }
+}
+
+```
+-   사용
+```swift
+
+넘겨주는 작업
+
+extension View {
+  func captionBackgroundColor(_ color: Color) -> some View {
+    environment(\.captionBackgroundColor, color)
+  }
+}
+
+ContentView()
+  .captionBackgroundColor(.yellow)
+
+
+받는 작업
+
+@Environment(\.captionBackgroundColor) var backgroundColor
+
+```

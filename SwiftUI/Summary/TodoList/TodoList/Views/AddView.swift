@@ -10,6 +10,8 @@ import SwiftUI
 struct AddView: View {
     
     @State var text:String = ""
+    @EnvironmentObject var listViewModel:ListViewModel
+    @Environment(\.isPresented) var presentationMode
     
     var body: some View {
         
@@ -24,7 +26,7 @@ struct AddView: View {
                 .cornerRadius(15)
                 
                 Button {
-                    
+                    saveButtonPressed()
                 } label: {
                     Text("Save".uppercased())
                         .foregroundColor(.white)
@@ -44,6 +46,12 @@ struct AddView: View {
         
     
     }
+    
+    
+    func saveButtonPressed() {
+        listViewModel.addItem(title: text)
+        presentationMode.
+    }
 }
 
 struct AddView_Previews: PreviewProvider {
@@ -52,6 +60,7 @@ struct AddView_Previews: PreviewProvider {
         NavigationView {
             AddView()
         }
+        .environmentObject(ListViewModel())
         
     }
 }
