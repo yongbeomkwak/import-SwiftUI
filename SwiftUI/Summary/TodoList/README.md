@@ -2,14 +2,13 @@
 
 ## 목차
 1. [UI](#uiview)
+2. [Model](#model)
 
 ---
 
-
-## UI(View)
-
 <br>
 
+## UI(View)
 ### 1. List
 ```swift
 List {
@@ -22,6 +21,8 @@ List {
 
 
 ```
+
+<br>
 
 ### 2. NavigationView
 ```swift
@@ -39,3 +40,24 @@ List {
 }
 ```
 
+---
+
+<br>
+
+## Model
+```swift
+struct ItemModel:Identifiable {
+    
+    let id:String = UUID().uuidString
+    let title: String
+    let isCompleted: Bool
+    
+    
+}
+```
+
+### 1. Identifiable 프로토콜
+- 채택하면 해쉬 타입으로 만들어줌
+
+### 2. UUID
+- 해쉬 아이디값 만들어줌
