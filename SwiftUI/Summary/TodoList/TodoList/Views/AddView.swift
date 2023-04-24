@@ -9,9 +9,13 @@ import SwiftUI
 
 struct AddView: View {
     
-    @State var text:String = ""
+    
     @EnvironmentObject var listViewModel:ListViewModel
     @Environment(\.dismiss) private var dismiss
+    
+    @State var text:String = ""
+    @State var alertTitle:String = ""
+    @State var showAlert:Bool = false
     
     var body: some View {
         
@@ -43,6 +47,9 @@ struct AddView: View {
                 
         }
         .navigationTitle("Add an Item ✏️")
+        .alert(alertTitle, isPresented: $showAlert) {
+            Button("OK", role: .cancel) {}
+        }
         
     
     }
@@ -59,11 +66,17 @@ struct AddView: View {
     
     func textIsAppropriate() -> Bool {
         if text.count < 3 {
+            
+            alertTitle = "최소글자를 어겼습니다. 3글자 이상"
+            showAlert.toggle()
+            
             return false
         }
         
         return true
     }
+    
+   
 }
 
 struct AddView_Previews: PreviewProvider {

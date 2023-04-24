@@ -52,6 +52,15 @@ ForEach(listViewModel.items,id: \.self.id){ item in
 
 ```
 
+### 4. Alert 
+```swift
+
+.alert(alertTitle, isPresented: $showAlert) {
+    Button("OK", role: .cancel) {}
+}
+
+```
+
 ---
 
 <br>
