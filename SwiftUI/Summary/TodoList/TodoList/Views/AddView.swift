@@ -11,7 +11,7 @@ struct AddView: View {
     
     @State var text:String = ""
     @EnvironmentObject var listViewModel:ListViewModel
-    @Environment(\.isPresented) var presentationMode
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         
@@ -50,7 +50,7 @@ struct AddView: View {
     
     func saveButtonPressed() {
         listViewModel.addItem(title: text)
-        presentationMode.
+        dismiss()
     }
 }
 
