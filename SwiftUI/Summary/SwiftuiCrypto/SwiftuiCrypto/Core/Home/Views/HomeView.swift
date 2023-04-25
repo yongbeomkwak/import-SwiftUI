@@ -21,6 +21,9 @@ struct HomeView: View {
                 
                 homeHeader
                 
+                columTitles
+               
+                
                 if !showPortfolio {
                     allCoinsList
                         .transition(.move(edge: .leading))
@@ -97,7 +100,7 @@ extension HomeView {
         List{
 
             ForEach(vm.portfolioCoins){ coin in
-                CoinRowView(coin: coin, showHoldingsColumn: false)
+                CoinRowView(coin: coin, showHoldingsColumn: true)
                     .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 10))
             }
         }
@@ -105,4 +108,19 @@ extension HomeView {
         
     }
     
+    private var columTitles: some View {
+        HStack{
+            Text("Coin")
+            Spacer()
+            if showPortfolio {
+                Text("Holdings")
+            }
+            
+            Text("Price")
+                .frame(width: UIScreen.main.bounds.width / 3.5,alignment: .trailing)
+        }
+        .font(.caption)
+        .foregroundColor(.theme.secondaryText)
+        .padding(.horizontal)
+    }
 }
