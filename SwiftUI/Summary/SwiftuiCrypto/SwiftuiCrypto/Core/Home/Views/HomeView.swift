@@ -17,26 +17,9 @@ struct HomeView: View {
                 .ignoresSafeArea()
             
             VStack{
-                HStack{
-                    CircleButtonView(iconName: "info")
-                    Spacer()
-                    Text("Live Prices")
-                        .font(.headline)
-                        .fontWeight(.heavy)
-                        .foregroundColor(.theme.accent)
-                    Spacer()
-                    CircleButtonView(iconName: "chevron.right")
-                        .rotationEffect(Angle(degrees: showPortfolio ? 180 : 0))
-                        .onTapGesture {
-                            withAnimation(.spring()){
-                                showPortfolio.toggle()
-                            }
-                            
-                        }
-                    
-                }
                 
-                Text("Header")
+                homeHeader
+
                 Spacer()
             }
             
@@ -53,4 +36,35 @@ struct HomeView_Previews: PreviewProvider {
         }
         
     }
+}
+
+extension HomeView {
+    private var homeHeader: some View {
+        HStack{
+            CircleButtonView(iconName: showPortfolio ? "plus" : "info")
+                .animation(.none,value: showPortfolio)
+                .background(
+                    CircleButtonAnimationView(animate: $showPortfolio)
+                )
+            Spacer()
+            Text(showPortfolio ? "Portfolio" : "Live Prices")
+                .font(.headline)
+                .fontWeight(.heavy)
+                .foregroundColor(.theme.accent).animation(.none,value: showPortfolio)
+            Spacer()
+            CircleButtonView(iconName: "chevron.right")
+                .background(
+                    CircleButtonAnimationView(animate: $showPortfolio)
+                )
+                .rotationEffect(Angle(degrees: showPortfolio ? 180 : 0))
+                .onTapGesture {
+                    withAnimation(.spring()){
+                        showPortfolio.toggle()
+                    }
+                    
+                }
+            
+        }
+    }
+    
 }
