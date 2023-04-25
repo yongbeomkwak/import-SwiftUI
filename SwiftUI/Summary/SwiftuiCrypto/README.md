@@ -2,8 +2,7 @@
 
 ## 목차
 1. [UI](#uiview)
-2. [Model](#model)
-3. [ViewModel](#viewmodel)
+2. [Service](#service)
 
 ---
 
@@ -22,3 +21,5 @@ List{
 }
 
 ```
+
+### 2. Service
