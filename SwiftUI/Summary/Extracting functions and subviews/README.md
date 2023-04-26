@@ -62,7 +62,7 @@ struct SwiftUIView: View {
     }
     
 
-    //서브뷰
+    //서브뷰를 변수로 
     var contentLayer: some View {
         VStack(spacing:20){
             Text("Title")
@@ -84,3 +84,14 @@ struct SwiftUIView: View {
 }
 
 ```
+
+## xCode 기능을 이용하여 SubView 만들기
+
+1. 추출하고 싶은 가장 바깥뷰를 클릭한 후, command + 클릭을 한다.
+
+
+<img width="301" alt="스크린샷 2023-04-26 오후 11 02 03" src="https://user-images.githubusercontent.com/48616183/234600678-3384375e-b5e5-4c2b-9719-941c728a694b.png">
+
+2. 아래와 같이 옵션창이 뜰 때 Extract Subview를 눌러 추출한다.
+
+<img width="301" alt="스크린샷 2023-04-26 오후 11 02 14" src="https://user-images.githubusercontent.com/48616183/234600685-44d86f60-79c0-44a3-97ec-7428faf016a6.png">
