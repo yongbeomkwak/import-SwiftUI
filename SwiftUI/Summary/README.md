@@ -13,3 +13,5 @@
 9. [Stack](https://github.com/yongbeomkwak/ADA/tree/main/SwiftUI/Summary/Stack)
 10. [Padding & Spacer](https://github.com/yongbeomkwak/ADA/tree/main/SwiftUI/Summary/Padding%20%26%20Spacer)
 11. [PropertyWrappers](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/PropertyWrappers)
+12. [StatePropertyWrapper](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/State%20PropertyWrapper)
+13. [Extracting functions and subviews](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Extracting%20functions%20and%20subviews)
