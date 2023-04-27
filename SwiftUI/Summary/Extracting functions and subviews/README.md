@@ -95,3 +95,5 @@ struct SwiftUIView: View {
 2. 아래와 같이 옵션창이 뜰 때 Extract Subview를 눌러 추출한다.
 
 <img width="301" alt="스크린샷 2023-04-26 오후 11 02 14" src="https://user-images.githubusercontent.com/48616183/234600685-44d86f60-79c0-44a3-97ec-7428faf016a6.png">
+
+3. command + shift + A 를 누른 후 rename 을 하게되면 한번에 이름이 바뀐다.
