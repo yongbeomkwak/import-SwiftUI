@@ -49,7 +49,7 @@ class LocalFileManager {
         
         guard let url = getURLForFolder(folderName: folderName) else {return}
         
-        if FileManager.default.fileExists(atPath: url.path()) {
+        if !FileManager.default.fileExists(atPath: url.path()) { //폴더 경로 없으면
             do{
                 /*
                  at : 경로 및 폴더명, 위에서 만든 URL 사용
@@ -57,7 +57,9 @@ class LocalFileManager {
                  attributes : 파일 접근 권한, 그룹 등등 폴더 속성 정의
                  
                  */
+                //폴더 생성
                 try FileManager.default.createDirectory(at: url, withIntermediateDirectories: true,attributes: nil)
+                
             } catch let error {
                 print("Error creating directory. FolderName: \(folderName). \(error)")
             }
