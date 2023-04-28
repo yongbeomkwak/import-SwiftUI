@@ -29,10 +29,10 @@ class CoinImageService {
     private func getCoinImage() {
         if let savedImage = fileManager.getImage(imageName: imageName, folderName: folderName){ //캐싱 되어 있으면 바로 꺼내고
             image = savedImage
-            print("Retrieved image from File Manager")
+           // print("Retrieved image from File Manager")
         } else { //아니면 다운
             downloadCoinImage()
-            print("Downloading image now")
+          //  print("Downloading image now")
         }
     }
     
