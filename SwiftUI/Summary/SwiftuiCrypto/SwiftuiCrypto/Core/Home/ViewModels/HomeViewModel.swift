@@ -24,13 +24,33 @@ class HomeViewModel:ObservableObject {
     }
     
     func addSubscribers() {
-        dataService.$allCoins
+        
+        $searchText
+            .combineLatest(dataService.$allCoins) // 실제 전체 코인
+            .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
+            .map(fillterCoins)
             .sink { [weak self] coins in
-                
                 guard let self else {return}
-                self.allCoins = coins
+                
+                self.allCoins = coins // 필터링 걸러진 코인
             }
             .store(in: &cancellables)
+    }
+    
+    private func fillterCoins(text:String,coins:[CoinModel]) -> [CoinModel] {
+        
+        guard !text.isEmpty else { // 비어 있으면
+            return coins // 전체 코인
+        }
+        
+        let lowercasedText = text.lowercased()
+        
+        return coins.filter({ (coin) -> Bool in
+            
+            return coin.name.lowercased().contains(lowercasedText) || coin.symbol.lowercased().contains(lowercasedText) ||
+                coin.id.lowercased().contains(lowercasedText)
+            
+        })
         
     }
     
