@@ -59,5 +59,13 @@ data 항목이 세개이므로 세번 반복됨. data 배열 안의 item들이 i
 <img width="733" alt="스크린샷 2023-04-28 오전 12 19 22" src="https://user-images.githubusercontent.com/87987002/234908834-83bb11ab-fb3d-4670-a4df-7e80f58925f1.png">
 
 
-forEach의 범위에 data 배열 자체를 넣고, ```id:\.self```를 통해 배열 안의 아이템에 고유한 속성을 부여하는 방식. <br>
-이렇게 쓸 때에는 데이터의 타입이 구별할 수 있는 타입이어야 함. 만약 구별할 수 없는 타입일 때는 데이터 타입을 **Hashable**로 지정해야 한다. 해셔블 프로토콜을 준수하라는 의미임.
+id는 구분할 수 있는 확실한 정보를 id값으로 사용하는 것. <br>
+forEach의 범위에 data 배열 자체를 넣고, ```id:\.self```를 통해 각 아이템에 고유한 속성(id)을 부여할 수 있다.
+이를 통해 한 아이템이 다른 아이템과 비교할 때 각각의 '유니크함'을 인증할 수 있다. <br><br><br>
+
+```swift
+//hashable 예제
+```
+ Swift의 기본 타입인 String, Int 등은 자동으로 Hashable 하지만, 구별할 수 없는 타입일 때는  **Hashable protocol**을 채택해야 한다. 
+
+
