@@ -70,6 +70,7 @@ class PortfolioDataService {
     }
     
     private func update(entity: PortfolioEntity, amount:Double) {
+        print("Run update")
         entity.amount = amount
         applyChange()
     }
