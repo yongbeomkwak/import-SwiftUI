@@ -15,6 +15,7 @@ class HomeViewModel:ObservableObject {
     @Published var allCoins:[CoinModel] = []
     @Published var portfolioCoins:[CoinModel] = []
     
+    @Published var isLoading: Bool = false
     @Published var searchText: String = ""
     
     private let coinDataService = CoinDataService()
@@ -50,6 +51,7 @@ class HomeViewModel:ObservableObject {
                 guard let self = self else {return}
                 
                 self.statistics = result
+                self.isLoading = false
             }
             .store(in: &cancellables)
         
@@ -71,6 +73,13 @@ class HomeViewModel:ObservableObject {
         portfolioDataService.updatePortfolio(coin: coin, amount: amount)
     }
     
+    
+    func reloadData(){
+        isLoading = true
+        coinDataService.getCoins()
+        marketDataService.getCoins()
+        HapticManager.notification(type: .success)
+    }
     
     private func fillterCoins(text:String,coins:[CoinModel]) -> [CoinModel] {
         
