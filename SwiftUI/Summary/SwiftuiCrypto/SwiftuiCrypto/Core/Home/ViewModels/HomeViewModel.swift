@@ -37,9 +37,9 @@ class HomeViewModel:ObservableObject {
         
         //update allCoins
         $searchText
-            .combineLatest(coinDataService.$allCoins) // 실제 전체 코인
+            .combineLatest(coinDataService.$allCoins,$sortOption) // 실제 전체 코인
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
-            .map(fillterCoins)
+            .map(filterAndSortCoins)
             .sink { [weak self] coins in
                 guard let self else {return}
                 
@@ -68,7 +68,7 @@ class HomeViewModel:ObservableObject {
             .sink { [weak self] coins in
                 guard let self else {return}
                 
-                self.portfolioCoins = coins
+                self.portfolioCoins = self.sortPortfolioCoinsIfNeeded(coins: coins)
                 
             }
             .store(in: &cancellables)
@@ -84,6 +84,48 @@ class HomeViewModel:ObservableObject {
         coinDataService.getCoins()
         marketDataService.getCoins()
         HapticManager.notification(type: .success)
+    }
+     
+    private func filterAndSortCoins(text:String,coins:[CoinModel],sort:SortOption) -> [CoinModel] {
+        var updatedCoins = fillterCoins(text: text, coins: coins)
+        sortCoins(sort: sort, coins: &updatedCoins)
+        
+        return updatedCoins
+    }
+    
+    private func sortCoins(sort:SortOption,coins: inout [CoinModel]){
+        
+        switch sort {
+        case.rank,.holdings:
+            coins.sort(by: {$0.rank < $1.rank})
+        
+        case .rankReversed,.holdingsReversed:
+            coins.sort(by: {$0.rank > $1.rank})
+            
+        case .price:
+             coins.sort(by: {$0.currentPrice > $1.currentPrice})
+        
+        case .priceReversed:
+             coins.sort(by: {$0.currentPrice < $1.currentPrice})
+            
+        }
+        
+    }
+    
+    private func sortPortfolioCoinsIfNeeded(coins: [CoinModel]) -> [CoinModel] {
+        
+        switch sortOption{
+            
+            case .holdings:
+                return coins.sorted(by: {$0.currentHoldingsValue > $1.currentHoldingsValue})
+            
+            case .holdingsReversed:
+                return coins.sorted(by: {$0.currentHoldingsValue < $1.currentHoldingsValue})
+            
+            default:
+                return coins
+            
+        }
     }
     
     private func fillterCoins(text:String,coins:[CoinModel]) -> [CoinModel] {
