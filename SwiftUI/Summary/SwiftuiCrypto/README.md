@@ -1,10 +1,11 @@
-# TODO List
+# Crpyto App
 
 ## 목차
 1. [UI](#uiview)
 2. [Service](#service)
 3. [Manager](#manager)
-4. [Extra](#extra)
+4. [CoreData](#coredata)
+5. [Extra](#extra)
 
 
 ---
@@ -312,6 +313,12 @@ class LocalFileManager {
 }
 
 ```
+
+## CoreData
+
+### 1. DataModel 
+
+
 
 
 ## Extra
