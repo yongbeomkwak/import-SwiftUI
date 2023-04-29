@@ -54,7 +54,12 @@ import Foundation
 import Foundation
 
 
-struct CoinModel: Identifiable, Codable {
+struct CoinModel: Identifiable, Codable,Equatable {
+    
+    static func == (lhs: CoinModel, rhs: CoinModel) -> Bool {
+           lhs.id == rhs.id // 아이디가 같으면 같은 객체로 인식
+    }
+    
     let id, symbol, name: String
     let image: String
     let currentPrice: Double
