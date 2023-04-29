@@ -314,6 +314,32 @@ class LocalFileManager {
 
 ```
 
+### 2.햅틱 매니저
+```swift
+//
+//  HapticManager.swift
+//  SwiftuiCrypto
+//
+//  Created by yongbeomkwak on 2023/04/29.
+//
+
+import Foundation
+import SwiftUI
+
+class HapticManager {
+    
+    static private let generator = UINotificationFeedbackGenerator()
+    
+    static func notification(type:UINotificationFeedbackGenerator.FeedbackType){
+        generator.notificationOccurred(type)
+    }
+}
+
+사용
+ HapticManager.notification(type: .success)
+
+```
+
 ## CoreData
 
 ### 1. DataModel 
