@@ -15,3 +15,6 @@
 11. [PropertyWrappers](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/PropertyWrappers)
 12. [StatePropertyWrapper](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/State%20PropertyWrapper)
 13. [Extracting functions and subviews](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Extracting%20functions%20and%20subviews)
+14. [Inits and Enums](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Inits%20and%20Enums)
+15. [ForEach](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/ForEach)
+16. [ScrollView](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/ScrollView)
