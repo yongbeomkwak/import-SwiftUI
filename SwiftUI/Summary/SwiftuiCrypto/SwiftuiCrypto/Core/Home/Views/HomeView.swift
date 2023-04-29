@@ -13,6 +13,9 @@ struct HomeView: View {
     @State private var showPortfolio:Bool = false // animate right
     @State private var showPortfolioView:Bool = false // new sheet
     
+    @State private var selectedCoin: CoinModel? = nil
+    @State private var showDetailView: Bool = false
+    
     var body: some View {
         ZStack{
             Color.theme.background
@@ -48,6 +51,9 @@ struct HomeView: View {
             }
             
             
+        }
+        .navigationDestination(isPresented: $showDetailView) {
+            DetailView(coin: $selectedCoin)
         }
     }
 }
@@ -101,12 +107,22 @@ extension HomeView {
         List{
 
             ForEach(vm.allCoins){ coin in
+                
                 CoinRowView(coin: coin, showHoldingsColumn: false)
                     .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 10))
+                    .onTapGesture {
+                        segue(coin: coin)
+                    }
+                
             }
         }
         .listStyle(.plain)
-        
+
+    }
+    
+    private func segue(coin:CoinModel) {
+            selectedCoin = coin
+            showDetailView.toggle()
     }
     
     private var portfolioCoinsList: some View {

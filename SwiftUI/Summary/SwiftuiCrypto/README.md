@@ -457,3 +457,17 @@ struct CoinImageView: View {
     }
 }
 ```
+
+### 2. Custom NavigationLink
+- 반복되는 ForEach NavigationLink를 쓰면 , 뷰 생성 시 Destination까지 모두 생성이 되어 퍼포먼스 저하
+```swift
+ForEach(vm.allCoins){ coin in
+                
+                NavigationLink(destination: DetailView(coin: coin), label: {
+                    CoinRowView(coin: coin, showHoldingsColumn: false)
+                        .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 10))
+                })
+                
+            }
+
+```
