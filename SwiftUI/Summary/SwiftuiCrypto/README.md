@@ -471,3 +471,12 @@ ForEach(vm.allCoins){ coin in
             }
 
 ```
+
+.navigationDestination 함수 이용
+
+```swift
+.navigationDestination(isPresented: $showDetailView) {
+            DetailView(coin: $selectedCoin)
+}
+
+```
