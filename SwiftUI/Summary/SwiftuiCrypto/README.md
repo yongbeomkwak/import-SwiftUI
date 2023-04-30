@@ -42,6 +42,34 @@ ZStack{
 }
 ```
 
+### 3.Path
+```swift
+GeometryReader{ geometry in
+            Path{ path in
+                for index in data.indices {
+                    let xPosition = geometry.size.width / CGFloat(data.count) * CGFloat(index + 1)
+                    
+                    let yAxis = maxY - minY
+                    
+                    let yPosition = (1  - CGFloat((data[index] - minY)) / yAxis) * geometry.size.height
+                    
+                    if  index == 0 {
+                        path.move(to: CGPoint(x: xPosition, y: yPosition)) //커서 이동
+                    }
+                    
+                    path.addLine(to: CGPoint(x:xPosition,y:yPosition)) // 선그리기
+                    
+                    
+                }
+            }
+            .stroke(lineColor,style: StrokeStyle(lineWidth: 2,lineCap: .round,lineJoin: .round))
+            
+}
+```
+
+<p align ="center"> <img width="205" alt="스크린샷 2023-04-30 오후 11 03 28" src="https://user-images.githubusercontent.com/48616183/235357180-55fe0817-4d6c-4a32-abad-8099ba236d36.png"> </p>
+
+
 
 
 ## Service
