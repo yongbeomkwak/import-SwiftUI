@@ -38,7 +38,8 @@ Text("Hello, World!")
 
 
 
-밑줄에 컬러 지정하려면 from to? 거기서 앞에 생략한거처럼 매개변수(parameter?)가 생략된 형태여서 앞에는 true라고만 쓰면 됨. 
+
+
 
 <img width="542" alt="스크린샷 2023-04-11 오전 11 35 14" src="https://user-images.githubusercontent.com/87987002/231041450-17303fc9-5866-4051-b1c0-b59db6be8e18.png">
 
@@ -48,6 +49,8 @@ Text("Hello, World!")
 	.underline(true, color: Color.red)
 	.strikethrough(true, color:Color.green)
 ```
+ 밑줄에 컬러 지정하려면 앞에 true라고만 쓰면 됨. 전달인자 레이블(Argument Label) - from to에서 앞에 생략한거처럼 생략된 형태여서
+
 
 
 <br>
