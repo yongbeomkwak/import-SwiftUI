@@ -39,6 +39,12 @@ struct ChartView: View {
         
         VStack{
             chartView
+                .frame(height: 200)
+                .background(
+                    chartBackground
+                )
+                .overlay(chartYAxis,alignment: .leading)
+                    
         }
         
         
@@ -78,4 +84,23 @@ extension ChartView {
         }
     }
     
+    private var chartBackground: some View{
+        VStack{
+            Divider()
+            Spacer()
+            Divider()
+            Spacer()
+            Divider()
+        }
+    }
+    
+    private var chartYAxis : some View {
+        VStack{
+            Text(maxY.formattedWithAbbreviations())
+            Spacer()
+            Text(((maxY + minY) / 2).formattedWithAbbreviations())
+            Spacer()
+            Text(minY.formattedWithAbbreviations())
+        }
+    }
 }
