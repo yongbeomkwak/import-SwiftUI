@@ -13,20 +13,20 @@ Color, grandient및 shape와 마찬가지로 Path는 그 자체로 View입니다
 - Paths는 절대 경로 안에서 좌표값에 맞춰 도형을 그리지만 
 - Shape는 path(in:)에서 주어진 Rect를 기반으로 상대 경로를 받아서 그리게 됩니다.
 
->
->
-> CGPath
->
-> - move(to:CGPoint): 커서옮김
->
-> - addLine(to:CGPoint) : 직선을 그으며 커서옮김
-> 
-> - closeSubPath(): 자동으로 Path를 닫음
->
-> - addCurve(to endPoint: CGPoint,controlPoint1: CGPoint,
+UIBezierPath
+```swift
+move(to:CGPoint): 커서옮김
+
+addLine(to:CGPoint) : 직선을 그으며 커서옮김
+ 
+closeSubPath(): 자동으로 Path를 닫음
+
+addCurve(to endPoint: CGPoint,controlPoint1: CGPoint,
 controlPoint2: CGPoint) : 3차 베지어 곡선
->
-> - addQuadCurve(to endPoint: CGPoint,controlPoint: CGPoint): 2차 베지어 곡선
+
+addQuadCurve(to endPoint: CGPoint,controlPoint: CGPoint): 2차 베지어 곡선
+```
+
 
 
 ## 사각형
