@@ -27,6 +27,9 @@ struct CoinRowView: View {
 
         }
         .font(.subheadline)
+        .background(
+            Color.theme.background.opacity(0.001)
+        )
     }
 }
 
