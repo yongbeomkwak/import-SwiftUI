@@ -26,6 +26,38 @@ List{
 
 ```
 
+```swift
+NavigationStack{
+    List{
+        
+        Section {
+            Text("Hi")
+            Text("Hi")
+        } header: {
+            Text("Header")
+        } footer: {
+            Text("Footer")
+        }
+
+        
+    }
+    }
+    .listStyle(GroupedListStyle())
+    .navigationTitle("Setting")
+    .toolbar {
+    ToolbarItem(placement: .navigationBarLeading) {
+        XMarkButton()
+    }
+}
+GroupedListStyle와 header, footer에 집중
+
+```
+<p align ="center"> <img width="199" alt="스크린샷 2023-05-01 오전 11 15 24" src="https://user-images.githubusercontent.com/48616183/235391938-99d21c46-c44f-43ea-871e-f14506038ceb.png"> </p>
+
+
+
+
+
 ### 2.Image , ProgressView
 ```swift
 ZStack{
@@ -69,7 +101,7 @@ GeometryReader{ geometry in
 
 <p align ="center"> <img width="205" alt="스크린샷 2023-04-30 오후 11 03 28" src="https://user-images.githubusercontent.com/48616183/235357180-55fe0817-4d6c-4a32-abad-8099ba236d36.png"> </p>
 
-### 3.ChartView 및 애니메이션
+### 4.ChartView 및 애니메이션
 ```swift
 @State private var percentage:CGFloat = 0
 
@@ -103,6 +135,16 @@ GeometryReader{ geometry in
 ```
 <p align ="center"> <img width="205" alt="스크린샷 2023-04-30 오후 11 03 28" src="https://user-images.githubusercontent.com/48616183/235387265-5ae76b6b-4486-4d65-ac59-4cd0672f0175.gif"> </p>
 
+### 5. Link
+```swift
+if let webSiteString = vm.webSiteURL,let url = URL(string: webSiteString) {
+    Link("Website",destination: url)
+}
+
+    if let redditStirng = vm.redditURL,let url = URL(string: redditStirng) {
+    Link("Reddit",destination: url)
+}
+```
 
 
 
