@@ -8,15 +8,29 @@
 import SwiftUI
 
 struct SettingView: View {
+    
+    let defaultURL = URL(string: "https://www.google.com")
+    let youtubeURL = URL(string: "https://www.youtube.com/c/swiftfulthinking")
+    
     var body: some View {
         NavigationStack{
             List{
-                
                 Section {
-                    Text("Hi")
-                    Text("Hi")
+                    VStack(alignment: .leading){
+                        Image("logo")
+                            .resizable()
+                            .frame(width: 100,height: 100)
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                            
+                            
+                        Text("BlaBla")
+                            .font(.callout)
+                            .fontWeight(.medium)
+                            .foregroundColor(.theme.accent)
+                    }
+
                 } header: {
-                    Text("Header")
+                    Text("Swiftui Thinking")
                 } footer: {
                     Text("Footer")
                 }
@@ -24,7 +38,7 @@ struct SettingView: View {
                 
             }
         }
-        .listStyle(GroupedListStyle()) 
+        .listStyle(GroupedListStyle())
         .navigationTitle("Setting")
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {

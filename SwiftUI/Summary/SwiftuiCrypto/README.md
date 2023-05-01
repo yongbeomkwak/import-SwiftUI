@@ -146,6 +146,13 @@ if let webSiteString = vm.webSiteURL,let url = URL(string: webSiteString) {
 }
 ```
 
+###  6.Sheet
+```swift
+.sheet(isPresented: $showSettingView, content: {
+    SettingView()
+})
+```
+
 
 
 ## Service
