@@ -69,6 +69,40 @@ GeometryReader{ geometry in
 
 <p align ="center"> <img width="205" alt="스크린샷 2023-04-30 오후 11 03 28" src="https://user-images.githubusercontent.com/48616183/235357180-55fe0817-4d6c-4a32-abad-8099ba236d36.png"> </p>
 
+### 3.ChartView 및 애니메이션
+```swift
+@State private var percentage:CGFloat = 0
+
+GeometryReader{ geometry in
+            Path{ path in
+                for index in data.indices {
+                    let xPosition = geometry.size.width / CGFloat(data.count) * CGFloat(index + 1)
+                    
+                    let yAxis = maxY - minY
+                    
+                    let yPosition = (1  - CGFloat((data[index] - minY)) / yAxis) * geometry.size.height
+                    
+                    if  index == 0 {
+                        path.move(to: CGPoint(x: xPosition, y: yPosition)) //커서 이동
+                    }
+                    
+                    path.addLine(to: CGPoint(x:xPosition,y:yPosition)) // 선그리기
+                    
+                    
+                }
+            }
+            .trim(from: 0,to: percentage) //모양에 대한 획 또는 채우기의 일부만 그릴 수 있습니다. 이 수정자는 시작 값( from )과 끝 값( to ), 둘 다 CGFloat 0 과 1 사이로 저장되는 두 매개 변수를 사용합니다 .
+            .stroke(lineColor,style: StrokeStyle(lineWidth: 2,lineCap: .round,lineJoin: .round))
+            .shadow(color: lineColor, radius: 10,x: 0,y: 0)
+            .shadow(color: lineColor.opacity(0.5), radius: 10,x:0,y:20)
+            .shadow(color: lineColor.opacity(0.2), radius: 10,x:0,y:30)
+            .shadow(color: lineColor.opacity(0.1), radius: 10,x:0,y:40)
+            
+        }
+
+```
+<p align ="center"> <img width="205" alt="스크린샷 2023-04-30 오후 11 03 28" src="https://user-images.githubusercontent.com/48616183/235387265-5ae76b6b-4486-4d65-ac59-4cd0672f0175.gif"> </p>
+
 
 
 
