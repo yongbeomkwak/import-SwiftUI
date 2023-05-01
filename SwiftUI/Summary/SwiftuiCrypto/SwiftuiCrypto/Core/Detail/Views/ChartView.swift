@@ -9,10 +9,13 @@ import SwiftUI
 
 struct ChartView: View {
     
-    let data: [Double]
-    let maxY: Double
-    let minY: Double
-    let lineColor: Color
+    private let data: [Double]
+    private let maxY: Double
+    private let minY: Double
+    private let lineColor: Color
+    private let startingData: Date
+    private let endingData: Date
+    @State private var percentage:CGFloat = 0
     
     init(coin:CoinModel) {
         self.data = coin.sparklineIn7D?.price ?? []
@@ -21,6 +24,10 @@ struct ChartView: View {
         
         let priceChange = (data.last ?? 0) - (data.first ?? 0 )
         lineColor = priceChange > 0 ? Color.theme.green : .theme.red
+        
+        endingData = Date(coinGeckoString:coin.lastUpdated ?? "")
+        startingData =  endingData.addingTimeInterval(-7*24*60*60)
+        
     }
     
     /*
@@ -43,10 +50,20 @@ struct ChartView: View {
                 .background(
                     chartBackground
                 )
-                .overlay(chartYAxis,alignment: .leading)
+                .overlay(chartYAxis.padding(.horizontal,4),alignment: .leading)
                     
+                chartDateLabel
+                .padding(.horizontal,4)
         }
-        
+        .font(.caption)
+        .foregroundColor(.theme.secondaryText)
+        .onAppear{
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.2) {
+                withAnimation(.linear(duration: 2.0)) {
+                    percentage = 1.0
+                }
+            }
+        }
         
     }
 }
@@ -79,7 +96,12 @@ extension ChartView {
                     
                 }
             }
+            .trim(from: 0,to: percentage) //모양에 대한 획 또는 채우기의 일부만 그릴 수 있습니다. 이 수정자는 시작 값( from )과 끝 값( to ), 둘 다 CGFloat 0 과 1 사이로 저장되는 두 매개 변수를 사용합니다 .
             .stroke(lineColor,style: StrokeStyle(lineWidth: 2,lineCap: .round,lineJoin: .round))
+            .shadow(color: lineColor, radius: 10,x: 0,y: 0)
+            .shadow(color: lineColor.opacity(0.5), radius: 10,x:0,y:20)
+            .shadow(color: lineColor.opacity(0.2), radius: 10,x:0,y:30)
+            .shadow(color: lineColor.opacity(0.1), radius: 10,x:0,y:40)
             
         }
     }
@@ -101,6 +123,14 @@ extension ChartView {
             Text(((maxY + minY) / 2).formattedWithAbbreviations())
             Spacer()
             Text(minY.formattedWithAbbreviations())
+        }
+    }
+    
+    private var chartDateLabel: some View {
+        HStack{
+            Text(startingData.asShortDateString())
+            Spacer()
+            Text(endingData.asShortDateString())
         }
     }
 }
