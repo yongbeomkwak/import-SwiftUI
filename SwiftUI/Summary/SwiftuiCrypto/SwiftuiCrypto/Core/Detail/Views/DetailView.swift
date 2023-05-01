@@ -51,6 +51,29 @@ struct DetailView: View {
                     
                     Divider()
                     
+                    ZStack{
+                        if let coinDescription = vm.coinDescription,!coinDescription.isEmpty {
+                            VStack(alignment: .leading){
+                                Text(coinDescription)
+                                    .lineLimit(3)
+                                    .font(.callout)
+                                    .foregroundColor(.theme.secondaryText)
+                                
+                                Button {
+                                    
+                                } label: {
+                                    Text("Read more..")
+                                        .font(.caption)
+                                        .fontWeight(.bold)
+                                        .padding(.vertical,4)
+                                }
+                                .tint(.blue)
+
+                            }
+                            .frame(maxWidth: .infinity,alignment: .leading)
+                        }
+                    }
+                    
                     overviewGrid
                     
                     additionalTitle
