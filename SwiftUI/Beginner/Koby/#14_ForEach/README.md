@@ -3,6 +3,7 @@
 
 
 
+
 ```swift
         VStack {
             ForEach(0..<10) { index in           //index는 반복되는 횟수임. 
@@ -66,6 +67,6 @@ forEach의 범위에 data 배열 자체를 넣고, ```id:\.self```를 통해 각
 ```swift
 //hashable 예제
 ```
- Swift의 기본 타입인 String, Int 등은 자동으로 Hashable 하지만, 구별할 수 없는 타입일 때는  **Hashable protocol**을 채택해야 한다. 
+ Swift의 기본 타입인 String, Int 등은 자동으로 Hashable 하지만, 구별할 수 없는 타입일 때는  **Hashable protocol**을 채택해야 한다.  
 
 
