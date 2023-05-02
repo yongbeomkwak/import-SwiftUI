@@ -41,7 +41,7 @@ anyTransition을 호출하면 opacity를 쓸 수 있음. 그리고 애니메이�
 <br>
 <br>
 
-## Asymetric Transition
+## Asymmetric Transition
 - 트랜지션의 시작과 끝을 다르게 설정할 수 있음
 
 ```swift

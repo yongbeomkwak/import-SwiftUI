@@ -28,10 +28,11 @@
 
 ## Spring Curves
 ```swift
-    .animation(.spring(
-                response: 0.5,              //애니메이션 경과 시간
-                dampingFraction: 0.7,       //스프링의 강도, 값이 낮을 수록 강도가 높아짐.
-                blendDuration: 1.0))        //보통 1.0 
+    .animation(Animation
+              .spring(
+                  response: 0.5,              //애니메이션 경과 시간
+                  dampingFraction: 0.7,       //스프링의 강도, 값이 낮을 수록 강도가 높아짐.
+                  blendDuration: 1.0))        //보통 1.0 
 ```
 
 ![화면 기록 2023-05-02 오전 1 49 13](https://user-images.githubusercontent.com/87987002/235491276-497f9105-bdb1-4552-b83c-fb55a62b3822.gif)

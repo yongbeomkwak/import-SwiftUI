@@ -1,25 +1,25 @@
 # **#25 Animations**
 
 ```swift
-     @State var isanimated: Bool = false
-    
-    var body: some View {
-        VStack {
-            Button("Button") {
-                withAnimation(.default) {     //defeult는 fade 효과
-                    isanimated.toggle()
-                }
+  @State var isanimated: Bool = false
+  
+  var body: some View {
+      VStack {
+          Button("Button") {
+              withAnimation(.default) {     //defeult는 fade 효과
+                  isanimated.toggle()
+              }
 
-            }
-            Spacer()
-            RoundedRectangle(cornerRadius: isanimated ? 50 : 25)    //코너값 변화
-                .fill(isanimated ? Color.red : Color.gray)    //컬러 변화
-                .frame(
-                    width: isanimated ? 100 : 300,    //가로 변화
-                    height: isanimated ? 100 : 300)    //세로 변화
-            Spacer() 
-        }
-    }
+          }
+          Spacer()
+          RoundedRectangle(cornerRadius: isanimated ? 50 : 25)    //코너값 변화
+              .fill(isanimated ? Color.red : Color.gray)    //컬러 변화
+              .frame(
+                  width: isanimated ? 100 : 300,    //가로 변화
+                  height: isanimated ? 100 : 300)    //세로 변화
+          Spacer() 
+      }
+  }
 ```
 ![화면 기록 2023-05-01 오후 11 17 28](https://user-images.githubusercontent.com/87987002/235465755-77f1ed95-f79b-4663-baa7-37d502c5363d.gif)
 
