@@ -1,4 +1,4 @@
-# **#28 3 Ways to Make Popovers**
+# **#29 3 Ways to Make Popovers**
 
 - #28 Sheets에서 다룬 예제처럼 첫번째 화면에서 버튼을 누르면 두번째 화면이 pop-up 되고, 두번째 창에서 ‘x’ 버튼을 누르면 다시 첫번째 창으로 넘어오는 동작을 **세가지 다른 방법**으로 구현할 수 있다.
 - **Sheets / Transitions / Offsets** 를 이용한 세 방법
