@@ -31,3 +31,6 @@
 27. [List](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/List)
 28. [Alert](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Alert)
 29. [ActionSheet](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/ActionSheet)
+30. [Popover](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Popover)
+31. [Animations](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Animations)
+32. [Animation Curve Timing](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Animation%20Curves%20and%20Timing)
