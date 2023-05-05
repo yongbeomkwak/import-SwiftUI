@@ -63,9 +63,11 @@
           height: isanimated ? 100 : 300)
       .rotationEffect(Angle(degrees: isanimated ? 360 : 0))
 
+
+      //  animation 수정자를 쓸 때에는 value값을 같이 써줘야 함. IOS 15부터 deprecated 되는 기능임. 
       .animation(Animation
           .default
-          .repeatForever(autoreverses: true))
+          .repeatForever(autoreverses: true), value: isanimated)  // 이렇게 써줘야 된다. 
 ```
 변수를 이용할 때에는 변수가 적용된 모든 객체에 애니메이션이 적용되지만 유일한 객체에만 애니메이션을 주고 싶으면 객체에 추가하면 됨. 이  방식은 애니메이션을 멈추거나 수정할 수 없다. 그래서 위의 방법인 변수를 이용하기를 추천. 
 
