@@ -9,6 +9,7 @@
 # **Navigation View**
 
 - 좌우로 넘어가는 인터랙션밖에 구현하지 못함
+- 기기가 달라질 때 호환성 낮음 → 요즘은 NavigationStack으로 대체하는 추세이다!
 
 <img src="https://user-images.githubusercontent.com/126866283/235852344-0c7cd1b8-1305-461d-b0fd-dc98ad0a4979.png" width=150>
 
@@ -129,7 +130,7 @@ struct MyOtherScreen : View {
 
 ```swift
 struct MyOtherScreen : View {
-	@Environment(\.presentationMode) var presentationMode
+	@Environment(\.dismiss) var dismiss
 
 	var body: some View {
 		ZStack {
@@ -140,7 +141,7 @@ struct MyOtherScreen : View {
 			
 			VStack {
         		Button("BACK BUTTON") { // 누르면 이전 화면으로 전환해주는 back button 만들기
-	       			presentationMode.wrappedValue.dismiss() 
+	       			dismiss()
         		}
 				// (2) 3rd screen 흰색 화면
         		NavigationLink("Click here", destination: Text("3rd screen!"))
@@ -152,7 +153,7 @@ struct MyOtherScreen : View {
 
 <br>
 
-- Navigation bar의 좌측 양 끝에 **아이콘**을 넣고 싶다면,
+- `.toolbar{ToolbarItem()}` - Navigation bar의 좌측 양 끝에 **아이콘**을 넣고 싶을 때 사용!
     
 <img src="https://user-images.githubusercontent.com/126866283/235854750-00c63ec4-40fc-4894-8dd2-9a9e60bd3c5c.png" width=150>
     
@@ -166,10 +167,15 @@ NavigationView {
   	}
   	.navigationTitle("All Inboxes")
   	.navigationBarTitleDisplayMode(.automatic)
-	.navigationBarItems(
-	  	leading: Image(systemName: "person.fill"),
-    	trailing: Image(systemName: "gear")
-  	)
+	.toolbar {
+        ToolbarItem(placement: .navigationBarLeading) {
+            Image(systemName: "person.fill")
+        }
+                
+        ToolbarItem(placement: .navigationBarTrailing) {
+            Image(systemName: "gear")
+        }
+    }
 }
 ```
 <br>
@@ -190,20 +196,25 @@ NavigationView {
   	}
   	.navigationTitle("All Inboxes")
   	.navigationBarTitleDisplayMode(.automatic)
-	.navigationBarItems(
-		leading:
-	    	NavigationLink(
+	
+
+	.toolbar {
+        ToolbarItem(placement: .navigationBarLeading) {
+            NavigationLink(
       		destination: Text("Person"),
       		label: {
 	      		Image(systemName: "person.fill")
-      		}),
-   		trailing:
-      		NavigationLink(
+      		})
+        }
+                
+        ToolbarItem(placement: .navigationBarTrailing) {
+            NavigationLink(
       		destination: MyOtherScreen(),
       		label: {
 	      		Image(systemName: "gear")
       		})
-  	)
+        }
+    }
 }
 ```
 
@@ -217,11 +228,13 @@ NavigationView {
 
 
 ```swift
-.navigationBarItems(
-	leading:
-		HStack {
+.toolbar {
+    ToolbarItem(placement: .navigationBarLeading) {
+        HStack {
 			Image(systemName: "person.fill")
 			Image(systemName: "flame.fill")
 		}
+    }
+}
 ```
 
