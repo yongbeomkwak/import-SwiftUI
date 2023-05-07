@@ -34,5 +34,5 @@
 30. [Popover](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Popover)
 31. [Animations](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Animations)
 32. [Animation Curve Timing](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Animation%20Curves%20and%20Timing)
-33. [Sheets] (https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Sheets)
-34. [NavigationView]  (https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/NavigationView)
+33. [Sheets](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Sheets)
+34. [NavigationView](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/NavigationView)
