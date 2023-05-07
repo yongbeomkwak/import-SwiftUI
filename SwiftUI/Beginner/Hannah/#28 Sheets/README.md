@@ -65,8 +65,8 @@ struct SheetsBootcamp: View {
 ```swift
 struct SecondScreen: View {
     
-	@Environment(\.presentationMode) var presentationMode
-  // \.presentationMode : 현재 띄워져 있는 화면을 가리키는 것
+	@Environment(\.dismiss) var dismiss
+  // 현재 띄워져 있는 화면에서 나가게끔 하는 기능
     
   var body: some View {
 	  ZStack(alignment: .topLeading) {
@@ -74,7 +74,7 @@ struct SecondScreen: View {
 	      .edgesIgnoringSafeArea(.all)
             
       Button(action: {
-	      presentationMode.wrappedValue.dismiss()
+	      dismiss()
         // 현재 띄워져 있는 화면을 dismiss 해라!
       }, label: {
 		    Image(systemName: "xmark")
@@ -86,13 +86,6 @@ struct SecondScreen: View {
   }
 }
 ```
-
-> ⭐️ **외워야 할 것**
-<br>
- `\.presentationMode` : “A binding to the current presentation mode of the view associated with this environment.” = **현재 띄워져 있는 화면을 가리키는 것**
- <br>
- `presentationMode.wrappedValue.dismiss()` : 현재 띄워져 있는 화면을 dismiss 해라!
-> 
 
 <br>
 <br>
