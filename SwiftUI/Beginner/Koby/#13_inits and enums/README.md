@@ -94,7 +94,7 @@ struct Initializer_Previews: PreviewProvider {
 ```
 <img width="732" alt="스크린샷 2023-04-26 오후 11 25 04" src="https://user-images.githubusercontent.com/87987002/234606712-dbbcaec1-46a5-4494-b9eb-dbb6591c375a.png">
 
-기본값을 제공하지 않으면, 해당 Initializer View를 초기화할 때마다 Background Color를 요청함.<br> 따라서 하단의 프리뷰에서 배경색을 요청하는 매개변수를 지정해야 함. 색상이 변경될 때마다 하단의 변수를 변경해주기만 하면 된다.  
+기본값을 제공하지 않으면, 해당 Initializer View를 초기화할 때마다 Background Color를 요청함.<br> 따라서 하단의 프리뷰에서 배경색을 요청하는 매개변수를 지정해야 함. 뷰를 호출할 때마다 색상을 변경할 수 있다. 
 <br>
 <br>
 
