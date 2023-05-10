@@ -36,3 +36,6 @@
 32. [Animation Curve Timing](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Animation%20Curves%20and%20Timing)
 33. [Sheets](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Sheets)
 34. [NavigationView](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/NavigationView)
+35. [Toggle](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Toggle)
+36. [Picker](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Picker)
+37. [ColorPicker](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/ColorPicker)
