@@ -1,4 +1,4 @@
-# Picker
+# ColorPicker
 
 ## 정의
 
@@ -9,7 +9,7 @@
 
 ## 구성 요소
 
-Picker(titleKey: StringProtocol, selection: Binding Color)
+ColorPicker(titleKey: StringProtocol, selection: Binding Color)
 
 - titleKey: Label과 같은 역할 
 - selection: 현재 선택된 색을 가르킬 바인딩 가능한 변수
