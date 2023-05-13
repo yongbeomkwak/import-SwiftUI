@@ -66,18 +66,30 @@ Slider(value: $sliderValue, in: 1...10, step: 1.0) // 1.0마다 slider 멈추기
 - slider 주변에 label을 달아 커스텀하고, slider value 값이 변경됐을 때의 action을 주고 싶을 때 사용
 
 ```swift
+@State var sliderValue: Double = 10
+@State var color: Color = .red
+```
+
+```swift
+VStack {
+	Text("Rating:")
+	Text(String(format: "%.2f", sliderValue))
+		.foregroundColor(color)
+
 Slider(
 	value: $sliderValue,
 	in: 0...10,
 	step: 1.0) {
-		Text("Title")                // 'label:'에 해당하는 내용. 나타나지 않음
+		Text("Title")            // 'label:'에 해당하는 내용. 나타나지 않음
   } minimumValueLabel: {         // slider의 왼쪽 끝에 나타낼 label
 	  Text("0")
   } maximumValueLabel: {         // slider의 오른쪽 끝에 나타낼 label
 	  Text("10")
   } onEditingChanged: { (_) in   // slider value가 바뀌는 경우 어떤 동작이 일어나는지
-	  color = .green             // 숫자가 빨간색 -> 초록색으로 바뀜
-  }
+    // _ 대신 default 값으로는 Bool이 설정되어 있는데, Bool을 쓰지 않는 경우 _로 처리 가능
+	  color = .green             // 동작: 숫자 글씨 색 초록색으로 바꾸기
+  } 
+}
 ```
 <img src="https://user-images.githubusercontent.com/126866283/236786384-acfea433-2c18-49ae-84f4-4b6d2dd2edc3.gif" width=300>
 
