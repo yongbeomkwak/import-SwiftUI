@@ -4,7 +4,7 @@
 - **시스템에 의해 가려질 수 있는 부분(ex.노치)의 마진을 자체적으로 주는 것**
     - 즉, 기기의 물리적인 요소에 의해 가려질 위험이 없는, 기기 화면 중 view를 보여주기에 안전한 영역
     - iOS 14.3부터 .edgesIgnoringSafeArea(.____) → .ignoreSafeArea(edges: .____)로 바뀜
-- 기기 종류마다 지정된 safe area 가 다르다.
+- 기기 종류마다 지정된 safe area가 다르다.
 
 
 ![image.jpg1](https://user-images.githubusercontent.com/126866283/235299126-07d89c0e-4250-4a86-8559-3840527a2ddf.png) |![image.jpg2](https://user-images.githubusercontent.com/126866283/235299154-8d8a2bf6-7f1f-43c0-b510-2191f1e1426d.png) |
