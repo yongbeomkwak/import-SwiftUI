@@ -78,7 +78,7 @@ struct HomeView: View {
 ```
 <img width="400" alt="스크린샷 2023-05-09 오전 1 25 15" src="https://user-images.githubusercontent.com/87987002/236877715-f09012b3-706a-4f3c-87a4-03b5e3852693.png">
 
-cmd누르고 Zstack을 클릭해서 Extract Subview로 배경을 따로 뺀것. 실제로 앱을 만들 때는 HomeView파일이 따로 생성될 것. 
+cmd누르고 Zstack을 클릭해서 Extract Subview로 배경을 따로 뺀것. Rename으로 한번에 뷰 이름을 바꿀 수도 있다. <br> 실제로 앱을 만들 때는 HomeView파일이 따로 생성될 것. 
 
 <br>
 <br>
@@ -165,9 +165,10 @@ struct HomeView: View {
 
 <br>
 
-$는 State로 할당한 변수의 값이 변경될 때마다 바인딩이라는 변수로 값이 이동한다는 뜻. 
-
 값이 자동으로 업데이트 되는 걸 바인딩이라고 한다. 
+```$```는 Binding 한 변수를 $표시로 넘겨준다는 뜻. 그렇게 하면 다른 뷰에서 변하는 변수값이 동기화된다. State에서 는 안쓰고 Binding을 쓸 때만 쓴다. 
+
+
 
 <br>
 <br>
