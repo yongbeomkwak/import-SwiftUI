@@ -63,7 +63,7 @@ MARK한 내용을 미니맵에서 프리뷰로 볼 수 있음. 미니맵에서 �
 
 ## **Comments**
 
->여러 코드를 주석처리 할 때에는 /* */를 통해 할 수 있음
+- 여러 코드를 주석처리 할 때에는 /* */를 통해 할 수 있음
 ```swift
     //코비 - 오늘의 할일
     /*
@@ -83,7 +83,7 @@ MARK한 내용을 미니맵에서 프리뷰로 볼 수 있음. 미니맵에서 �
 <br>
 <br>
 
->body에 내용이 많을 경우에는 현재 어떤 괄호 안에 있는지 헷갈릴 수 있음. 그래서 구간의 시작과 끝을 적어주기도 한다. 
+- body에 내용이 많을 경우에는 현재 어떤 괄호 안에 있는지 헷갈릴 수 있음. 그래서 구간의 시작과 끝을 적어주기도 한다. 
 
 ```swift
     var body: some View {
@@ -114,7 +114,7 @@ MARK한 내용을 미니맵에서 프리뷰로 볼 수 있음. 미니맵에서 �
 
 ## **Documentation**
 
->opt누르고 코드 클릭하면 문서가 나온다. 
+- opt누르고 코드 클릭하면 문서가 나온다. 
 **summary, declaration, parameter** 등이 있고 참고하면 좋음
 
 
@@ -123,7 +123,7 @@ MARK한 내용을 미니맵에서 프리뷰로 볼 수 있음. 미니맵에서 �
 <br>
 <br>
 
->내가 만든 변수, 뷰, 기능 등에는 summary가 없다. 이를 추가하려면 ///로 쓰면 됨
+- 내가 만든 변수, 뷰, 기능 등에는 summary가 없다. 이를 추가하려면 ///로 쓰면 됨
 ```swift
     ///This is foregroundLayer that holds a scrollView.
     private var foregroundLayer: some View {
@@ -144,17 +144,17 @@ MARK한 내용을 미니맵에서 프리뷰로 볼 수 있음. 미니맵에서 �
 <br>
 
 ## Add Documentation
->cmd누르고 클릭하면 문서를 추가할 수 있다. 직접 문서의 항목을 커스텀할 수 있음. 
+- cmd누르고 클릭하면 문서를 추가할 수 있다. 직접 문서의 항목을 커스텀할 수 있음. 
 
 <img width="729" alt="스크린샷 2023-05-13 오후 11 11 25" src="https://github.com/yongbeomkwak/SwiftUI-Study/assets/87987002/606a8ee8-dfec-494f-9181-df3717562350">
 
 
 
-- Discussion 추가 - Summary 아래에 한줄 띄우고 적으면 됨. 자유롭고 솔직한 설명이 적힌다. 
+> Discussion 추가 - Summary 아래에 한줄 띄우고 자유롭고 솔직한 설명을 적으면 됨.
 
-- 예제 추가 - ``` 사이에 적으면 됨. 
+> 예제 추가 - ``` 사이에 적으면 됨. 
 
--  Warning, parameter, Return도 추가할 수 있음. 
+> Warning, parameter, Return도 추가할 수 있음. 
 
 
 <img width="677" alt="스크린샷 2023-05-13 오후 11 38 50" src="https://github.com/yongbeomkwak/SwiftUI-Study/assets/87987002/a1a08072-d512-4b96-82b9-9cffd7e59e4b">
