@@ -45,3 +45,6 @@
 41. [Date Picker](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Date%20Picker)
 42. [Slider](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Slider)
 43. [Stepper](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Stepper)
+44. [If let guard let](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/If%20Let%2C%20Guard%20Let)
+45. [OnAppear onDisappear](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/OnAppear%2C%20OnDisappear)
+46. [OnTapGesture](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/OnTapGesture)
