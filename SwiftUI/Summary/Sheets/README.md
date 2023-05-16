@@ -3,6 +3,7 @@
 - `.sheet(isPresented: __, content: __)`
 - `.sheet` modifier : 한 view 안에 **한 번만** 사용할 수 있다.
 - .sheet { } 안에 `if {} else {}` 를 사용해 상황 별로 다른 sheet을 호출하는 ~~**conditional logic은 절대 쓰면 안됨**~~
+- .presentationDetents 속성을 이용하여 나오는 sheet의 크기를 만질 수 있다.
 
 <br>
 
@@ -84,6 +85,18 @@ struct SecondScreen: View {
       })
     }
   }
+}
+```
+
+
+## .presentationDetents
+- [참고자료](https://developer.apple.com/documentation/swiftui/image/presentationdetents(_:))
+
+```swift
+ .sheet(isPresented: $showEmojiView) {
+            EmojiPopUpView(str: $task.emoji)
+                .presentationDetents([.fraction(0.4)])
+              
 }
 ```
 
