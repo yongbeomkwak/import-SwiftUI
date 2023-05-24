@@ -1,7 +1,7 @@
 # **#59 Badges**
 - list와 tab bar에만 적용된다.
 
-## Tab bar
+## Tab bar_Badge
 
 ```swift
         TabView {
@@ -21,7 +21,7 @@
 <br>
 <br>
 
-## List
+## List_ Badge
 
 ```swift
         List {

@@ -27,9 +27,12 @@ struct ListSwipeActionsView: View {
     }
 }
 ```
+<img width="515" alt="스크린샷 2023-05-24 오후 11 36 12" src="https://github.com/yongbeomkwak/SwiftUI-Study/assets/87987002/da445a3c-cbf0-4791-bbee-4f47173b7967">
+
 <br>
 <br>
 <br>
+
 
 ## 커스텀 스와이프 코드
 

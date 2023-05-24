@@ -1,10 +1,10 @@
 # **#57 Button styles and control sizes**
-- ios 15에서는 버튼 스타일이 지정된 편리한 기본 수정자가 있다. 
+- ios 15에서는 기본 수정자로 버튼 스타일을 지정할 수 있다. 
 
 <br>
 
 ## **buttonStyle**
-AccentColor는 Assets파일에서 원하는 컬러로 지정할 수 있음. 
+
 
 ```swift
   VStack{
@@ -33,6 +33,7 @@ AccentColor는 Assets파일에서 원하는 컬러로 지정할 수 있음.
             .buttonStyle(.borderless)           //폰트에 AccentColor, 버튼 경계가 안보임
         }
 ```
+AccentColor는 Assets파일에서 원하는 컬러로 지정할 수 있음. 
 
 
 <img width="731" alt="스크린샷 2023-05-22 오전 4 04 56" src="https://github.com/yongbeomkwak/SwiftUI-Study/assets/87987002/d4ec460d-c38d-4811-999e-ff0c1c507a80">
@@ -50,10 +51,10 @@ AccentColor는 Assets파일에서 원하는 컬러로 지정할 수 있음.
             .frame(height: 55)
             .frame(maxWidth: .infinity)
             .buttonStyle(.borderedProminent)
-            .controlSize(.large)                //순서대로 large, regular, smaill, mini
+            .controlSize(.large)                //순서대로 large, regular, small, mini
         }
 ```
-controlSize와 buttonStyle은 버튼 자체에 적용되는 게 아니라 버튼 내부의 label에 적용되는 것.
+controlSize와 buttonStyle은 버튼 자체에 적용되는 게 아니라 버튼 내부의 label에 적용되는 것. 디폴트 label에 .large가 적용됨
 
 <img width="733" alt="스크린샷 2023-05-22 오전 4 31 37" src="https://github.com/yongbeomkwak/SwiftUI-Study/assets/87987002/5bf0a54c-a20e-4bea-a9e3-4bdd122d30c8">
 
