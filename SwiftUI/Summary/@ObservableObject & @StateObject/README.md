@@ -72,7 +72,11 @@ struct ViewModelBootcamp: View {
 <br>
 
 ### **MVVM(Model-View-ViewModel)**
+
+
 UI 및 비 UI 코드를 분리하기 위한 UI 아키텍처 디자인 패턴
+
+
 <img src="https://github.com/yongbeomkwak/SwiftUI-Study/assets/126866283/becca0e5-f2bd-41ab-850c-d5af544946d3" width=500>
 
 
@@ -86,7 +90,9 @@ UI 및 비 UI 코드를 분리하기 위한 UI 아키텍처 디자인 패턴
 - `@Published` 데이터가 바뀔 때마다 `FruitViewModel`을 다시 그리게 된다.
 - 다른 view에서 @ObservedObject로 class의 데이터를 받아오려면, 해당 class에 `: ObservableObject` 를 붙여주어야 한다.
 
+<br>
 <img src="https://github.com/yongbeomkwak/SwiftUI-Study/assets/126866283/971a8af2-c25c-4e30-b87c-2d62717f38e0" width=300>
+<br><br>
 
 ```swift
 class FruitViewModel: ObservableObject { // 과일 데이터 업데이트 사항들은 이곳에 전부 몰아넣기
