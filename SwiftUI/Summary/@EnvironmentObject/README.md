@@ -21,7 +21,7 @@ class EnvironmentViewModel: ObservableObject {
 	@Published var dataArray: [String] = []
     
 	init() {
-		getData() // 모델이 초기화 될 때마다 dataArray에 아래 4개의 string이 추가된다.
+		getData()    // 모델이 초기화 될 때마다 dataArray에 아래 4개의 string이 추가된다.
     }
     
     func getData() { // dataArray 배열 안에 들어갈 string 데이터를 받는 함수
@@ -62,27 +62,27 @@ list의 기기 중 하나를 누르면 나오는, 두번째 주황색 view를 �
 struct DetailView: View {
     
 	@ObservedObject var viewModel: EnvironmentViewModel
-  let selectedItem: String
+    let selectedItem: String
     
-  var body: some View {
-	  ZStack {
+    var body: some View {
+	    ZStack {
 	    // background
-      Color.orange.ignoresSafeArea()
+            Color.orange.ignoresSafeArea()
             
-      //foreground
-      NavigationLink(
-	      destination: FinalView(viewModel: viewModel),
-        label: {
-	        Text(selectedItem)
-	          .font(.headline)
-            .foregroundColor(.orange)
-            .padding()
-            .padding(.horizontal)
-            .background(Color.white)
-            .cornerRadius(30)
-      })
+        //foreground
+            NavigationLink(
+	            destination: FinalView(viewModel: viewModel),
+                label: {
+	                Text(selectedItem)
+	                    .font(.headline)
+                        .foregroundColor(.orange)
+                        .padding()
+                        .padding(.horizontal)
+                        .background(Color.white)
+                        .cornerRadius(30)
+                })
+        }
     }
-  }
 }
 ```
 
@@ -96,25 +96,25 @@ struct FinalView: View {
     var body: some View {
 	    ZStack {
 	    //background
-        LinearGradient(
-	        gradient: Gradient(colors: [Color(#colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)), Color(#colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1))]), // #colorLiteral()
-            startPoint: .topLeading,
-            endPoint: .bottomTrailing
-        )
-	    .ignoresSafeArea()
-            
-        //foreground
-        ScrollView {
-	        VStack(spacing: 20) {
-	            ForEach(viewModel.dataArray, id: \.self) { item in
-	                Text(item)
+            LinearGradient(
+                gradient: Gradient(colors: [Color(#colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)), Color(#colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1))]), // #colorLiteral()
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+                
+            //foreground
+            ScrollView {
+                VStack(spacing: 20) {
+                    ForEach(viewModel.dataArray, id: \.self) { item in
+                        Text(item)
+                    }
                 }
+                .foregroundColor(.white)
+                .font(.largeTitle)
             }
-            .foregroundColor(.white)
-            .font(.largeTitle)
         }
     }
-  
 }
 ```
 

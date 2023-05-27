@@ -21,7 +21,7 @@ var body: some View {
 				HStack(spacing: 15.0) {
 	        Circle()        // 사용자 프로필 용 circle
 	          .frame(width: 35, height: 35)
-          Text(user)        // 사용자 이름
+          	Text(user)      // 사용자 이름
         }
         .padding(.vertical, 10)
 		}
@@ -100,30 +100,30 @@ List {
 		    Circle()
 		        .frame(width: 35, height: 35)
 
-        VStack(alignment: .leading) {
-			Text(user.displayName)         // 실제 이름
-				.font(.headline)
-			Text("@\(user.userName)")      // 아이디
-				.foregroundColor(.gray)   
-				.font(.caption)
-		}
+			VStack(alignment: .leading) {
+				Text(user.displayName)         // 실제 이름
+					.font(.headline)
+				Text("@\(user.userName)")      // 아이디
+					.foregroundColor(.gray)   
+					.font(.caption)
+			}
 
-		Spacer()
+			Spacer()
 
-		if user.isVerified {               // isVerified == true인 사람들은 공인 마크
-	        Image(systemName: "checkmark.seal.fill")
-	            .foregroundColor(.blue)
-        }
+			if user.isVerified {               // isVerified == true인 사람들은 공인 마크
+				Image(systemName: "checkmark.seal.fill")
+					.foregroundColor(.blue)
+			}
 
-		VStack {
-	        Text("\(user.followerCount)")  // 팔로워 수
-	            .font(.headline)
-            Text("Followers")              // "Followers" 글씨
-                .foregroundColor(.gray)
-                .font(.caption)
-        }
-    }
-    .padding(.vertical, 10)
+			VStack {
+				Text("\(user.followerCount)")  // 팔로워 수
+					.font(.headline)
+				Text("Followers")              // "Followers" 글씨
+					.foregroundColor(.gray)
+					.font(.caption)
+			}
+    	}
+    	.padding(.vertical, 10)
 	}
 }
 ```
