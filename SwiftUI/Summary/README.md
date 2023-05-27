@@ -57,3 +57,6 @@
 53. [AsyncImage](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/AsyncImage)
 54. [Background Materials](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Background%20Materials)
 55. [TextSelection](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/TextSelection)
+56. [Button styles and control sizes](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Button%20styles)
+57. [List Swipe Actions](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/List%20Swipe%20Actions)
+58. [Badges](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Badges)
