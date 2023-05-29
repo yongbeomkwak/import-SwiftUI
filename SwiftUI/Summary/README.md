@@ -60,3 +60,5 @@
 56. [Button styles and control sizes](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Button%20styles)
 57. [List Swipe Actions](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/List%20Swipe%20Actions)
 58. [Badges](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Badges)
+59. [SoundEffect](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/SoundEffect)
+60. [Haptic](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Haptic)
