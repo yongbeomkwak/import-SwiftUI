@@ -32,6 +32,29 @@ class HapticManager {
 }
 ```
 
+## View
+```swift
+VStack(spacing: 20){
+            
+    Button("success") {HapticManager.instance.notification(type:.success)}
+    Button("warning") {HapticManager.instance.notification(type:.warning)}
+    Button("error") {HapticManager.instance.notification(type:.error)}
+
+
+
+    Divider()
+
+    Button("soft") {HapticManager.instance.impact(style: .soft)}
+    Button("light") {HapticManager.instance.impact(style: .light)}
+    Button("medium") {HapticManager.instance.impact(style: .medium)}
+    Button("rigid") {HapticManager.instance.impact(style: .rigid)}
+    Button("heavy") {HapticManager.instance.impact(style: .heavy)}
+            
+            
+}
+```
+
+
 <br>
 
 ### 1. UINotificationFeedbackGenerator.FeedbackType
