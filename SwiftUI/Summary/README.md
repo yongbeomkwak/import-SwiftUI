@@ -62,3 +62,5 @@
 58. [Badges](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Badges)
 59. [SoundEffect](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/SoundEffect)
 60. [Haptic](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Haptic)
+61. [Multiple Sheets](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Multiple%20Sheets)
+62. [Mask](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Mask)
