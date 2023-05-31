@@ -64,7 +64,7 @@ VStack(spacing: 20){
 - .warning : 경고 알림 진동, 띠..딩 느낌
 - .error : 에러를 알림 , 가장 독특한 진동, 또로로롱 느낌 뭔가 굴러가는 느낌
 
-[진독 관련 HIG 자료](https://developer.apple.com/design/human-interface-guidelines/playing-haptics)
+[진 관련 HIG 자료](https://developer.apple.com/design/human-interface-guidelines/playing-haptics)
 
 <br>
 
