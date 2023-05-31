@@ -47,14 +47,14 @@ struct MaskView: View {
                         ZStack(alignment: .leading) {   //사각형 왼쪽 정렬
                             Rectangle()
                                 .foregroundColor(.yellow)
-                                .frame(width: CGFloat(rating)/5*geometry.size.width)    //5분의 3 * 가로 길이 
+                                .frame(width:   Float(rating)/5*geometry.size.width)    //가로 길이 * 5분의 3
                         }
                     }
                 )
         }
     }
     
-    private var starsView: some View {      //왜 private을 썼지
+    private var starsView: some View {   
         HStack{
             ForEach(1..<6) { index in
                 Image(systemName: "star.fill")
@@ -69,8 +69,7 @@ struct MaskView: View {
 }
 ```
 
-startsView를 따로 만들어서 뷰를 그려주고, 그 위에 overlay로 Rectangle을 하나 넣어준다. <br>
-rating만큼 가로길이를 조절하기 위해 geometry.size. width의 5분의 3만큼 가로 길이를 설정한다. 
+startsView를 따로 만들어서 뷰를 그려주고, 그 위에 overlay로 Rectangle을 하나 넣어준다. <br>geometry.size. width의 5분의 3만큼 가로 길이를 설정한다. 
 
 <img width="704" alt="스크린샷 2023-05-31 오전 3 52 15" src="https://github.com/yongbeomkwak/SwiftUI-Study/assets/87987002/05c7757c-eb19-471a-9a5e-a3161b0976db">
 
@@ -107,7 +106,7 @@ struct MaskView: View {
                     .font(.largeTitle)
                     .foregroundColor(.gray)
                     .onTapGesture {
-                      withanimation(.easeInOut){
+                      withanimation(.easein){
                         rating = index
                       }
                     }

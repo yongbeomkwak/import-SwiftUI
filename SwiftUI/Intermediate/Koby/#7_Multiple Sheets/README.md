@@ -1,7 +1,7 @@
-# **#7 Multiple Sheetes**
+# **#7 Multiple Sheets**
 
 버튼을 누르면 각각 다른 랜덤 시트가 나오도록 만든 코드. 
-<br>각 시트의 타이틀인 ONE, TWO가 텍스트로 써져야 하는데 처음 버튼을 클릭하면 "STATING TITLE"이 나오는 문제점. (다시 누를때는 정상 작동함)
+<br>각 시트의 타이틀인 ONE, TWO가 텍스트로 써져야 하는데 처음 버튼을 클릭하면 "STARTING TITLE"이 나오는 문제점. (다시 누를때는 정상 작동함)
 
 ```swift
 struct RandomModel: Identifiable {
@@ -17,7 +17,7 @@ struct MultipleSheetes: View {
     var body: some View {
         VStack(spacing:20) {
             Button("Button 1") {
-                selectedModel = RandomModel(title: "ONE")   //이거는 메모리에 이렇게 저장한다는 뜻이지? init도 함수니까 이거도 함수인가
+                selectedModel = RandomModel(title: "ONE")
                 showSheet.toggle()
             }
             Button("Button 2") {
@@ -26,15 +26,13 @@ struct MultipleSheetes: View {
             }
         }
         .sheet(isPresented: $showSheet) {
-            NextScreen(selectedModel: selectedModel)  //state 프로퍼티도 타입으로 쓸 수 있는거임?
-                                                      //selectedModel 타입을 지정해서 변하는 값이 들어가도록 함
+            NextScreen(selectedModel: selectedModel)
         }
     }
     
 }
 
 struct NextScreen: View {
-    
     let selectedModel: RandomModel
     
     var body: some View {
