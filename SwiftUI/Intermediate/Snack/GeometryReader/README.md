@@ -45,6 +45,8 @@ enum CoordinateSpace {
   case named(AnyHashable) // 명시적으로 이름을 할당한 공간 기준
 }    
 ```
+![](https://velog.velcdn.com/images/snack/post/132a23f6-65e3-4e1b-ae06-ab1f1986396d/image.png)
+
 - `GeometryReader`를 활용하여 다양한 특수효과를 표현할 수 있다.
 ```swift
 struct GeometryReaderStudy: View {
