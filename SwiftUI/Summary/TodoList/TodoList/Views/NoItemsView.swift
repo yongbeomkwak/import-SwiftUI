@@ -17,6 +17,7 @@ struct NoItemsView: View {
                 Text("There are no Items")
                     .font(.title)
                     .fontWeight(.semibold)
+                    .on
                 Text("Are you blababalbblablalablalbalblabl?balbalbalblabalblaadasdfsdaf")
                     .padding(.bottom,20)
                 NavigationLink(destination: AddView(), label: {
