@@ -65,3 +65,5 @@
 61. [Multiple Sheets](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Multiple%20Sheets)
 62. [Mask](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Mask)
 63. [High Order Function](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/High%20Order%20Function)
+64. [Rotation Gesture](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Rotation%20Gesture)
+65. [Drag Gesture](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Drag%20Gesture)
