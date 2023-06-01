@@ -133,6 +133,7 @@ func getRotationAmount() -> Double {
 <br>
 
 우선, View 아래에 흰색 Sign Up 창과 관련된 `MySignUpView()`를 만들자.
+
 <img src="https://github.com/yongbeomkwak/SwiftUI-Study/assets/126866283/eb2af0aa-ac5a-456e-90aa-3487fef8ec32" width = 250>
 
 ```swift
