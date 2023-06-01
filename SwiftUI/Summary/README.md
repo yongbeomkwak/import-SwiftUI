@@ -67,3 +67,5 @@
 63. [High Order Function](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/High%20Order%20Function)
 64. [Rotation Gesture](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Rotation%20Gesture)
 65. [Drag Gesture](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Drag%20Gesture)
+66. [ScrollViewReader](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/ScrollViewReader)
+67. [GeometryReader](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/GeometryReader)
