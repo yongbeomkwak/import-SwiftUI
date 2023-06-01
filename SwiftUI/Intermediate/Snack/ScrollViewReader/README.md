@@ -4,6 +4,7 @@
 ### ScrollView 내부에서 제어
 - 일반적으로 `ScrollView` 내부의 포함되는 뷰의 식별자를 사용하여 특정 뷰로 스크롤할 수 있다.
 - `id`값을 지정하여 해당 위치의 뷰로 스크롤할 수 있고, `anchor`를 통해 스크롤된 뷰의 위치를 지정할 수 있다.
+- `id`값에는 `Int`타입 뿐 아니라 `String`타입도 입력 가능하다.
 ```swift
 ScrollView {
     ScrollViewReader { proxy in
