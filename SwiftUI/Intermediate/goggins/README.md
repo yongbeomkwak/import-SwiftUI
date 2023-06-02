@@ -13,8 +13,7 @@
 
 현재 버튼에 LongPressGesture를 적용하여 최소 5초 동안 버튼터치한 상태로 버튼의 사각형 넓이를 기준으로 최대 100 까지는 손가락이 움직여도 작동한다.
 
-<img src="https://github.com/HunyongSeong/SwiftUIStudy/assets/108869319/90944dc9-20fd-447e-bbb5-5a8db13dedd0
-" width="300" >
+<img src="https://github.com/HunyongSeong/SwiftUIStudy/assets/108869319/90944dc9-20fd-447e-bbb5-5a8db13dedd0" width=300 >
 
 <br>
 
@@ -57,8 +56,7 @@ struct LongPressGestureBootcamp_Previews: PreviewProvider {
 
 <br>
 
-<img src="https://github.com/HunyongSeong/SwiftUIStudy/assets/108869319/08579f13-7b39-45cd-b3a5-ed160b5db9e6
-" width="300" >
+<img src="https://github.com/HunyongSeong/SwiftUIStudy/assets/108869319/08579f13-7b39-45cd-b3a5-ed160b5db9e6" width=300 >
 
 #### 최종적으로 버튼을 2초 동안 누르지 않으면 다시 파란색 사각형이 커지다가 되돌아 오게됨 / 2초 동안 누르게되면 사각형이 꽉 채워지고 초록색으로 변함.
 
@@ -160,7 +158,4 @@ func onLongPressGesture(
 
 `perform action` 긴 압박이 인식될 때 수행할 작업.
 
-
 `onPressingChanged` 제스처의 누름 상태가 변경될 때 실행할 클로저로, 현재 상태를 매개 변수로 전달합니다. 인식되는 순간 true를 전달하고 바로 false로 변경된다.
-
-`onPressingChanged` 제스처의 누름 상태가 변경될 때 실행할 클로저로, 현재 상태를 매개 변수로 전달합니다.
