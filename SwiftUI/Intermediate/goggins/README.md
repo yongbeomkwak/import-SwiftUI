@@ -160,8 +160,7 @@ func onLongPressGesture(
 
 `perform action` 긴 압박이 인식될 때 수행할 작업.
 
-<<<<<<< HEAD
+
 `onPressingChanged` 제스처의 누름 상태가 변경될 때 실행할 클로저로, 현재 상태를 매개 변수로 전달합니다. 인식되는 순간 true를 전달하고 바로 false로 변경된다.
-=======
+
 `onPressingChanged` 제스처의 누름 상태가 변경될 때 실행할 클로저로, 현재 상태를 매개 변수로 전달합니다.
->>>>>>> DavidGoggins
