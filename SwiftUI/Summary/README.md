@@ -69,3 +69,5 @@
 65. [Drag Gesture](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Drag%20Gesture)
 66. [ScrollViewReader](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/ScrollViewReader)
 67. [GeometryReader](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/GeometryReader)
+68. [Long Press Gesture](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Long%20Press%20Gesture)
+69. [Magnification Gesture](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Magnification%20Gesture)
