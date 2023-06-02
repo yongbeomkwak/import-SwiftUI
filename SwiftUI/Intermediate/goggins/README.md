@@ -31,14 +31,14 @@ struct LongPressGestureBootcamp: View {
             .padding()
             .padding(.horizontal)
             .background(isComplete ? Color.green : Color.gray) 
-						// 삼항연산자로 isComplete가 true일때 그린 false일때 gray 
+			// 삼항연산자로 isComplete가 true일때 그린 false일때 gray 
             .cornerRadius(10)
 
 
              // 오랫동안 누르고 있어야 작동하는 제스쳐
             .onLongPressGesture(minimumDuration: 5.0, maximumDistance: 100) { 
                 isComplete.toggle() 
-								// isComplete가 true가 되어 위의 background에 변화를 주게됨
+				// isComplete가 true가 되어 위의 background에 변화를 주게됨
             }
     }
 }
@@ -50,7 +50,8 @@ struct LongPressGestureBootcamp_Previews: PreviewProvider {
 }
 ```
 <br>
-// (minimumDuration: 1.0, maximumDistance: 100) 
+
+`(minimumDuration: 1.0, maximumDistance: 100)`
 
 **최소 5초 동안 버튼을 터치한 상태**에서 **버튼의 사각형 넓이를 기준으로 최대 100** 까지는 손가락이 움직여도 작동한다. 그 이상으로 움직이게 되면은 작동하지 않게 됨.
 
