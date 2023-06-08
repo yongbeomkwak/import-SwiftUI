@@ -133,6 +133,8 @@ DispatchQueue.global(qos: .background).async {
 
 <br>
 
+### 수정 전 코드
+
 ```swift
 DispatchQueue.global(qos: .background).async {
             let newData = self.downloadData()
@@ -217,6 +219,7 @@ qos에 따라 다른 내부 동작 방법
 
 우선순위가 높은 작업일수록 해당 작업이 빠르게 실행도려고 하고, 우선순위가 낮을수록 더 효율적인 CPU 코어를 절약하려고 시도
 
+<br>
 
 #### Custom Queue
 - DispatchQueue(label:attributes:) 형태
