@@ -11,8 +11,6 @@
 
 ## 코드 구성
 
-<br>
-
 ### View
 ```swift
 struct ContentView: View {
