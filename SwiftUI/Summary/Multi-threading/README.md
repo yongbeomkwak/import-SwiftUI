@@ -160,3 +160,76 @@ DispatchQueue.global(qos: .background).async {
             
 }
 ```
+<br><br>
+
+### 현재 실행되는 스레드를 알고 싶을 경우
+
+```swift
+func fetchData() {
+        
+    DispatchQueue.global(qos: .background).async {
+        print("#1 is MainThread: \(Thread.isMainThread)")
+        print("#1 CurrentThread: \(Thread.current)")
+        let newData = self.downloadData()
+        
+        DispatchQueue.main.async {
+            print("#2 is MainThread: \(Thread.isMainThread)")
+            print("#2 CurrentThread: \(Thread.current)")
+            self.dataArray = newData
+        }
+        
+    }
+}
+
+```
+
+<img width="563" alt="스크린샷 2023-06-08 오후 12 21 38" src="https://github.com/yongbeomkwak/SwiftUI-Study/assets/48616183/ff1c90f7-83cd-45b1-9d91-61e1c3a69946">
+
+
+<br><br>
+
+### DispatchQueue 종류
+
+1. main queue (serial queue)
+2. global queue (concurernt, qos 설정 가능)
+3. custom queue (디폴트는 serial이며 concurrent로 변경 가능)
+         
+
+<br>
+
+#### DispatchQoS.QoSClass 종류
+
+```swift
+// 애니메이션과 같은 UI 즉시 업데이트가 필요하며, 멈춘것처럼 보이지 않는 작업들 (유저의 반응)
+DispatchQueue.global(qos: .userInteactive)
+
+// 저장된 문서를 열거나, 유저가 무언가 클릭했을 때 작업을 수행하고 즉각 보여주어야 하는 것 (몇초)
+DispatchQueue.global(qos: .userInitiated)
+
+// 기본 서비스 (일반적인 경우 - userInitiated와 utility의 중간정도의 우선순위)
+DispatchQueue.global(qos: .default)
+
+// 보통 프로그레스바를 같이 사용하는 작업
+DispatchQueue.global(qos: .utility)
+
+// 유저에게 표시되지 않는 동기화, 안정화, 백업과 같은 일
+DispatchQueue.global(qos: .background)
+```
+<br>
+
+qos에 따라 다른 내부 동작 방법
+
+우선순위가 높은 작업일수록 해당 작업이 빠르게 실행도려고 하고, 우선순위가 낮을수록 더 효율적인 CPU 코어를 절약하려고 시도
+
+
+#### Custom Queue
+- DispatchQueue(label:attributes:) 형태
+
+- label에는 큐의 이름을 정의 (로깅할때 어떤 큐인지 구분에 유리)
+
+- 디폴트는 serial queue이지만 attributes 파라미터에 .concurrent를 넣으면 concurrent queue로 사용
+
+```swift
+let mySerialQueue = DispatchQueue(label: "myQueue")
+let myConcurrentQueue = DispatchQueue(label: "myQueue", attributes: .concurrent)
+```
