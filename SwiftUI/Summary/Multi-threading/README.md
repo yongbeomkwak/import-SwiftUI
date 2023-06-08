@@ -96,8 +96,7 @@ lass BackgroundThreadViewModel: ObservableObject {
 <br>
 
 ### 해석
-    위 영상을 보면 , LoadData를 누를 때 그래프가튀고
-    스크롤하면 또 굉장히 많이 튄다.
+    위 영상을 보면 , LoadData를 누를 때 그래프가튀고 스크롤하면 또 굉장히 많이 튄다.
     MainThread는 UI와 굉장히 밀접한 관련이 있는 스레드이다.
     그러므로 MainThread에 무거운 작업이 실행되면, 
     유저가 느끼는 앱의 속도가 굉장히 저하된다.
@@ -119,8 +118,7 @@ DispatchQueue.global(qos: .background).async {
 ![ezgif com-video-to-gif (1)](https://github.com/yongbeomkwak/SwiftUI-Study/assets/48616183/ee56d06a-dcc8-4c8e-b769-32f29db931d5)
 
 ### 해석
-    위 영상을 보면 , LoadData를 누를 때 그래프가튀고
-    Thread9가 생긴 후 그래프가 튄다.
+    위 영상을 보면 , LoadData를 누를 때 그래프가튀고 Thread9가 생긴 후 그래프가 튄다.
     데이터를 별도의 스레드를 이용해서 가져오는 것을 확인할 수 있다.
 
 <br><br>
