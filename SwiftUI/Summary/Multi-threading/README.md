@@ -197,6 +197,9 @@ func fetchData() {
 
 #### DispatchQoS.QoSClass 종류
 
+<img width="882" alt="스크린샷 2023-06-12 오전 10 10 34" src="https://github.com/yongbeomkwak/SwiftUI-Study/assets/48616183/758b757a-9f86-45ca-b5fd-f877bd8600ea">
+
+
 ```swift
 // 애니메이션과 같은 UI 즉시 업데이트가 필요하며, 멈춘것처럼 보이지 않는 작업들 (유저의 반응)
 DispatchQueue.global(qos: .userInteactive)
