@@ -45,9 +45,9 @@ struct User: Codable {
 
 	enum CodingKeys: String, CodingKey {
 
-	case userName = "user_name"  //user_name -> userName
-	case userEmail = "user_email" // user_email -> userEmail
-    case tmp // 키값이 같은 경우 tmp -> tmp 
+		case userName = "user_name"  //user_name -> userName
+		case userEmail = "user_email" // user_email -> userEmail
+   		case tmp // 키값이 같은 경우 tmp -> tmp 
 	}
 }
 
