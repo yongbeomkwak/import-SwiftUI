@@ -41,7 +41,7 @@ case 바뀐 결과값 = 바뀌기 전 값
 struct User: Codable {
 	var userName: String
 	var userEmail: String
-    var tmp : String
+    	var tmp : String
 
 	enum CodingKeys: String, CodingKey {
 
