@@ -20,6 +20,7 @@
 ### 3. Codable
 - Codable = Encodable + Decodable
 
+<br>
 
 ### 4. CodingKeys
 - 디코딩 과정에서 json key가 아닌 내가 원하는 이름으로 지정해줄 수 있게 해주는 프로토콜입니다.
