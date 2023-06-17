@@ -76,3 +76,4 @@
 72. [Local Notification](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Local%20Notification)
 73. [Codable](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Codable)
 74. [Typealias](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Typealias)
+75. [Weak self](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Weak%20self)
