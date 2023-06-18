@@ -77,3 +77,4 @@
 73. [Codable](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Codable)
 74. [Typealias](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Typealias)
 75. [Weak self](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Weak%20self)
+76. [escaping](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/%40escaping)
