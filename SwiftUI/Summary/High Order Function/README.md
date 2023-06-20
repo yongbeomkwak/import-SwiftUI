@@ -19,7 +19,7 @@ struct UserModel: Identifiable {
 
 ### 1. sorted
 ```swift
-// 오름차순 정렬
+// 내림차순 정렬
 
 filteredArray = dataArray.sorted(by: { u1, u2 in
             return u1.points > u2.points
