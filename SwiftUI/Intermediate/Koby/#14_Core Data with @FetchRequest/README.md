@@ -68,12 +68,10 @@
 
 <img width="1220" alt="스크린샷 2023-06-07 오전 2 27 55" src="https://github.com/yongbeomkwak/SwiftUI-Study/assets/87987002/4745d411-45ad-453f-ac3e-224ccd352823">
 
-Core data를 만드는 데 제일 먼저 할 일은 객체들의 구조를 정의하기 위해 data model 파일(xcdatamodeld 파일)을 만드는 것임. <br>
-코어 데이터는 모든 데이터를 Entity 단위로 처리한다. 
-
+- Core data를 만드는 데 제일 먼저 할 일은 객체들의 구조를 정의하기 위해 data model 파일(xcdatamodeld 파일)을 만드는 것임. <br>
+- Entity는 "저장되고, 관리되어야 하는 데이터의 집합"을 의미한다. 코어 데이터는 모든 데이터를 Entity 단위로 처리한다. 
 
 - 코어 데이터에는 이미지나 컬러를 직접적으로 넣을 수는 없고 Binary Data 로 인코딩해서 넣어야 함. 
-- Entity는 "저장되고, 관리되어야 하는 데이터의 집합"을 의미한다. 
 - Entity라는 class 안에 Attributes, Relationships, Fetched Properties 라는 프로퍼티들이 있는 형태임. 
 
 <br>
@@ -117,12 +115,12 @@ struct PersistenceController {
 import CoreData
 
 struct PersistenceController {             
-    static let shared = PersistenceController()     //싱글톤 - 싱글 인스턴스
+    static let shared = PersistenceController()    
 
     let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "CoreDate")     //2️⃣ Coredata.xcdatamodeld 파일을 참조한다. 즉, 코어데이터를 참조한다 //Container: 모든 데이터를 불러오는 데이터 베이스라고 보면 됨. //init으로 값을 초기화해준다.
+        container = NSPersistentContainer(name: "CoreDate")   
                 if inMemory {
                     container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
                 }
@@ -190,7 +188,7 @@ struct CoreDateApp: App {
 //
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.managedObjectContext) private var viewContext    //5️⃣ managedObjectContext에 접근 가능!
 
     ...
 }
@@ -212,10 +210,10 @@ struct ContentView: View {
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
-    @FetchRequest(
+    @FetchRequest(  //6️⃣ FruitEntity를 가져온다. FetchRequest는 데이터를 뷰에 빠르고 쉽게 가져오게 해줌.
         entity: FruitEntity.entity(),
-        sortDescriptors: [NSSortDescriptor(keyPath: \FruitEntity.name, ascending: true)]) 
-    var fruits: FetchedResults<FruitEntity> 
+        sortDescriptors: [NSSortDescriptor(keyPath: \FruitEntity.name, ascending: true)]) //백슬래시 무슨뜻?? 쨌든 이렇게 하면 이름순으로 정렬된다.
+    var fruits: FetchedResults<FruitEntity> //FetchedResults타입인데 bunch of FruitEntity이 될 거라는 뜻.
     
     ...
 }
