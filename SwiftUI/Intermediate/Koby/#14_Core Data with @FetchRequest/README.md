@@ -125,7 +125,7 @@ struct PersistenceController {
                     container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
                 }
 
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in        //3️⃣ Container에서 데이터를 불러오는 함수! 그래서 비동기다
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in        //3️⃣ Container에서 데이터를 저장할 곳을 불러오는 함수! 그래서 비동기다
             if let error = error as NSError? {         //로드가 성공적이면 storeDescription, NSError라는 종류의 에러가 나면 에러 발생 함수 실행.
                 fatalError("Unresolved error \(error), \(error.userInfo)")  //fatalError - persistence container를 잘못 설정했을 때 자동으로 크래시나게 하는 에러
             }
