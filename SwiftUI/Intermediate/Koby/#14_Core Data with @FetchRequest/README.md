@@ -1,13 +1,12 @@
 # **#14 Core Data with @FetchRequest**
 - 코어데이터는 아이폰에 저장돼있는 데이터베이스임. 데이터를 저장하고 
 앱을 끄고 다시 열어도 데이터 보존됨. 
-세션들 사이에서도 일관된다. 
 
 - 코어데이터는 app storage와 user defaults 와 같은 방식으로 작동하지만 더 복잡하고 큰 규모의 데이터베이스를 추가하는 데에 더 집중한다는 차이가 있다. 
 
 
 
-- 새 프로젝트를 생성할 때 Using core data 에 채크하면 애플이 제공해주는 core data 템플릿이 있음. 
+- 새 프로젝트를 생성할 때 Using core data 에 체크하면 애플이 제공해주는 core data 템플릿이 있음. 
 <img width="712" alt="스크린샷 2023-06-06 오후 8 37 34" src="https://github.com/yongbeomkwak/SwiftUI-Study/assets/87987002/55ac8199-2f94-4e55-b4c4-a321eb1fd733">
 
 <br>
@@ -16,13 +15,6 @@
 
 <br>
 <br>
-
-
-
-
-<img width="1016" alt="스크린샷 2023-06-22 오전 8 54 05" src="https://github.com/yongbeomkwak/SwiftUI-Study/assets/87987002/372a14b9-cd92-42e1-9372-b80a32bf0c3b">
-
-
 
 
 
@@ -70,9 +62,12 @@
 <br>
 
 # ✅ **Core Data 만드는 방법**
-# **1️. Data Model** 만들기
+## **1️. Data Model** 만들기
+
+<img width="1016" alt="스크린샷 2023-06-22 오전 8 54 05" src="https://github.com/yongbeomkwak/SwiftUI-Study/assets/87987002/372a14b9-cd92-42e1-9372-b80a32bf0c3b">
 
 <img width="1220" alt="스크린샷 2023-06-07 오전 2 27 55" src="https://github.com/yongbeomkwak/SwiftUI-Study/assets/87987002/4745d411-45ad-453f-ac3e-224ccd352823">
+
 Core data를 만드는 데 제일 먼저 할 일은 객체들의 구조를 정의하기 위해 data model 파일(xcdatamodeld 파일)을 만드는 것임. <br>
 코어 데이터는 모든 데이터를 Entity 단위로 처리한다. 
 
@@ -84,7 +79,7 @@ Core data를 만드는 데 제일 먼저 할 일은 객체들의 구조를 정�
 <br>
 <br>
 
-# **2. Core Data Stack** 세팅하기
+## **2. Core Data Stack** 세팅하기
 **NSPersistnetntContainer를 가져와서 container라는 변수를 생성하고 거기에다가 데이터를 로드하자!**
 ```swift
 //  Persistence.swift
@@ -113,7 +108,7 @@ struct PersistenceController {
 <br>
 <br>
 
-# 3. NSPersistentContainer의 데이터 베이스에 접근하기
+## 3. NSPersistentContainer의 데이터 베이스에 접근하기
 ```swift
 //  Persistence.swift
 //
@@ -144,8 +139,8 @@ struct PersistenceController {
 <br>
 <br>
 
-# 4. 다른 모든 뷰에 Environment를 통해 viewContext를 전해준다. 
-# App.swift
+## 4. 다른 모든 뷰에 Environment를 통해 viewContext를 전해준다. 
+### App.swift
 ```swift
 //  CoreDateApp.swift
 //
@@ -184,7 +179,7 @@ struct CoreDateApp: App {
 <br>
 <br>
 
-# 5. ContenView에서 **@Environmen**를 통해 **managedObjectContet**에 접근
+## 5. ContenView에서 **@Environmen**를 통해 **managedObjectContet**에 접근
 
 
 
@@ -207,7 +202,7 @@ struct ContentView: View {
 <br>
 <br>
 
-# 6. @FetchRequst를 통해 데이터(entity)를 가져온다!
+## 6. @FetchRequst를 통해 데이터(entity)를 가져온다!
 
 ```swift
 //  ContentView.swift
@@ -240,7 +235,7 @@ struct ContentView: View {
 <br>
 <br>
 
-# 7. Entity의 모든 변경사항을 디스크에 저장하기 위해 try ViewContext.save() 실행
+## 7. Entity의 모든 변경사항을 디스크에 저장하기 위해 try ViewContext.save() 실행
 ```swift
 //  ContentView.swift
 //
