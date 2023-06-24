@@ -78,3 +78,4 @@
 74. [Typealias](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Typealias)
 75. [Weak self](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Weak%20self)
 76. [escaping](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/%40escaping)
+77. [Timer](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Timer%20%26%20onReceive)
