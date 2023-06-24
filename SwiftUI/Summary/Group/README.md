@@ -52,11 +52,11 @@ VStack{
 .font(.largeTitle)
 ```
 
-<p >
+<p align ="center">
 
-<img width = "200" height = "400" src ="https://github.com/yongbeomkwak/SwiftUI-Study/assets/48616183/2ca5b8a8-699f-40eb-a401-6165b84a21ea">
+<img width = "250" height = "500" src ="https://github.com/yongbeomkwak/SwiftUI-Study/assets/48616183/2ca5b8a8-699f-40eb-a401-6165b84a21ea">
 
-<img width = "200" height = "400" src ="https://github.com/yongbeomkwak/SwiftUI-Study/assets/48616183/860cb557-018a-4943-bdcc-b4898967dab0">
+<img width = "250" height = "500" src ="https://github.com/yongbeomkwak/SwiftUI-Study/assets/48616183/860cb557-018a-4943-bdcc-b4898967dab0">
 
-<img width = "200" height = "400" src ="https://github.com/yongbeomkwak/SwiftUI-Study/assets/48616183/860cb557-018a-4943-bdcc-b4898967dab0">
+<img width = "250" height = "500" src ="https://github.com/yongbeomkwak/SwiftUI-Study/assets/48616183/860cb557-018a-4943-bdcc-b4898967dab0">
 </p>
