@@ -31,7 +31,9 @@ class SubscriberViewModel: ObservableObject {
     }
 }
 ```
-- `AnyCancellable` 배열과 `store` 메서드를 이용해서 구독 취소와 이벤트 생성을 중단할 수 있다.
+- `Cancellable`은 취소 가능한 작업을 나타내는 프로토콜 객체이며, `cancel` 메서드를 이용해 `Publisher`가 값을 발생시키는 것을 취소하고 리소스에 대해 해제할 수 있다.
+- `AnyCancellable`은 하나 이상의 `Cancellable` 인스턴스를 저장하는 클래스이며, 필요에 따라 모든 인스턴스를 취소할 수 있다.
+- `store` 메서드를 이용해서 취소 가능한 인스턴스를 `Set`에 저장할 수 있다.(`RxSwift`의 `disposeBag`과 비슷한 개념)
 ```swift
 class SubscriberViewModel: ObservableObject {
     
