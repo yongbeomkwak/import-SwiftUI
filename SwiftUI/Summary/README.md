@@ -81,3 +81,4 @@
 77. [Timer](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Timer%20%26%20onReceive)
 78. [Group](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Group)
 79. [Combine Publishers & Subscribers](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Publishers%2C%20Subscribers)
+80. [CoreData](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Core%20Data%20with%20%40FetchRequest)
