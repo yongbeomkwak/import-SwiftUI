@@ -2,7 +2,9 @@
 
 <br>
 
-## Combine의 핵심 개념은 Publisher와 Subscriber입니다. Publisher는 이벤트를 생성하고 스트림으로 흘러가게 합니다. Subscriber는 Publisher로부터 이벤트를 받고 처리합니다. Publisher와 Subscriber 사이의 이벤트 흐름은 애플리케이션의 다양한 컴포넌트 간에 데이터 및 상태를 전달하는 데 사용됩니다.
+### Combine의 핵심 개념은 Publisher와 Subscriber입니다. Publisher는 이벤트를 생성하고 스트림으로 흘러가게 합니다. 
+### Subscriber는 Publisher로부터 이벤트를 받고 처리합니다. 
+### Publisher와 Subscriber 사이의 이벤트 흐름은 애플리케이션의 다양한 컴포넌트 간에 데이터 및 상태를 전달하는 데 사용됩니다.
 
 <br>
 
