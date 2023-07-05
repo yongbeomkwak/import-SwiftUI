@@ -174,3 +174,5 @@ struct ArcSample: Shape {
 
 ### 결과
 
+<img width="171" alt="스크린샷 2023-07-05 오전 10 03 45" src="https://github.com/yongbeomkwak/SwiftUI-Study/assets/48616183/73e6795d-554a-4dc1-a327-95579f4d76f0">
+
