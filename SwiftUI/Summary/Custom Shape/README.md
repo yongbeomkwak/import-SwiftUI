@@ -70,7 +70,7 @@ func addArc(
 arcCenter center: CGPoint,  // Arc의 중심점
 radius: CGFloat, // radius : Arc의 반지름
 startAngle: CGFloat, // startAngle : Arc의 시작 위치
-ndAngle: CGFloat,  // endAngle : Arc의 종료 위치
+endAngle: CGFloat,  // endAngle : Arc의 종료 위치
 clockwise: Bool //  Arc를 그릴 방향 (true : 시계 방향, false : 시계 반대 방향)
 
 )
