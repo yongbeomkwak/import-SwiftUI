@@ -88,3 +88,5 @@
 84. [Custom Shape Animation](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Custom%20Shape%20Animation)
 85. [Button Styles](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Button%20styles)
 86. [Resizable Sheet](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Resizable%20Sheet)
+87. [SafeAreaInset](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/SafeAreaInset)
+88. [MatchedGeometryEffect](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/MatchedGeometryEffect)
