@@ -86,3 +86,5 @@
 82. [Base Step Combine](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Combine)
 83. [Custom Shape](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Custom%20Shape)
 84. [Custom Shape Animation](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Custom%20Shape%20Animation)
+85. [Button Styles](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Button%20styles)
+86. [Resizable Sheet](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Resizable%20Sheet)
