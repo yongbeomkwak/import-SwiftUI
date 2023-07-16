@@ -33,8 +33,16 @@ struct TransitionView: View {
             .edgesIgnoringSafeArea(.bottom)
     }
 }
+
+<br>
+
 ```
-value값이 적용되는 버튼까지 포괄하는 범위에 애니메이션 적용하면 트랜지션 정상 작동함
+- value값이 적용되는 버튼까지 포괄하는 범위에 애니메이션 적용한다. 
+- 캔버스에서는 오류가 나서 안 보임. 시뮬레이터로 봐야 한다.  <br>
+- duprecated 된 버전의 animation 수정자는 뷰에서 일어나는 모든 변화에 같은 애니메이션이 적용되었지만, <br> value 매개변수를 사용하면 애니메이션을 적용하고 싶은 곳에만 적용할 수 있다.
+
+ <br>
+ <img height = 400 src = "https://github.com/yongbeomkwak/SwiftUI-Study/assets/87987002/32864737-543d-4453-a9bd-a833b932c798">
 
 ### 방법2: **withanimation** 사용하기
 ```swift
@@ -106,3 +114,32 @@ anyTransition을 호출하면 opacity를 쓸 수 있음. 그리고 애니메이�
 ```
 
 ![화면 기록 2023-05-02 오전 3 15 20](https://user-images.githubusercontent.com/87987002/235504551-81152c0e-ad4e-45ca-bb6c-25f9cbbbad98.gif)
+
+<br>
+<br>
+<br>
+
+
+## [추가] **베지어 타이밍 커브 애니메이션** 
+![Animation-timingCurve-1@2x](https://github.com/yongbeomkwak/SwiftUI-Study/assets/87987002/0a64bcc4-5fbf-4fb1-8d94-e62e50991204)
+
+- 베지어 커브를 통해 애니메이션의 속도를 조정할 수 있다. 
+- 시작점은 (0,0), 끝점은 (1,1)이라고 했을 때 첫번째 컨트롤 포인트와 두번째 컨트롤 포인트의 위치(x,y)를 지정함으로써 곡선을 조정할 수 있다. 
+- 경사가 급하면 애니메이션이 빠르게 실행되고 경사가 완만하면 느리게 실행된다. 위의 예시 곡선은 빠르게-느리게-빠르게 순서로 애니메이션이 나타난다. 
+
+```swift
+struct ContentView: View {
+    @State private var scale = 1.0
+
+
+    var body: some View {
+        VStack {
+            Circle()
+                .scaleEffect(scale)
+                .animation(
+                    .timingCurve(0.1, 0.75, 0.85, 0.35, duration: 2.0),
+                    value: scale)
+        }
+    }
+}
+```
