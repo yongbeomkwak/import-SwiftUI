@@ -33,11 +33,16 @@ struct TransitionView: View {
             .edgesIgnoringSafeArea(.bottom)
     }
 }
+
+<br>
+
 ```
 - value값이 적용되는 버튼까지 포괄하는 범위에 애니메이션 적용한다. 
 - 캔버스에서는 오류가 나서 안 보임. 시뮬레이터로 봐야 한다.  <br>
-- duprecated 된 버전의 animation 수정자는 뷰에서 일어나는 모든 변화에 같은 애니메이션이 적용되었지만, <br> value 매개변수를 사용하면 애니메이션을 적용하고 싶은 곳에만 적용할 수 있다. 
-![화면 기록 2023-07-16 오후 8 45 31](https://github.com/yongbeomkwak/SwiftUI-Study/assets/87987002/32864737-543d-4453-a9bd-a833b932c798)
+- duprecated 된 버전의 animation 수정자는 뷰에서 일어나는 모든 변화에 같은 애니메이션이 적용되었지만, <br> value 매개변수를 사용하면 애니메이션을 적용하고 싶은 곳에만 적용할 수 있다.
+
+ <br>
+ <img height = 400 src = "https://github.com/yongbeomkwak/SwiftUI-Study/assets/87987002/32864737-543d-4453-a9bd-a833b932c798">
 
 ### 방법2: **withanimation** 사용하기
 ```swift
