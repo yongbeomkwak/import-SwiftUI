@@ -96,3 +96,4 @@
 92. [PreferenceKey](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/PreferenceKey)
 93. [@ViewBuilder](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/%40ViewBuilder)
 94. [Generics](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/Generics)
+95. [UIViewRepresentable](https://github.com/yongbeomkwak/SwiftUI-Study/tree/main/SwiftUI/Summary/UIViewRepresentable)
