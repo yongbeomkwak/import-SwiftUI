@@ -90,7 +90,7 @@ struct SecondScreen: View {
 
 
 ## .presentationDetents
-- [참고자료](https://developer.apple.com/documentation/swiftui/image/presentationdetents(_:))
+- [참고자료](https://developer.apple.com/documentation/swiftui/view/presentationdetents(_:))
 
 ```swift
  .sheet(isPresented: $showEmojiView) {
