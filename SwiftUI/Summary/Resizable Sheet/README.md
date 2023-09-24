@@ -31,15 +31,15 @@ struct ResizableSheetBootcamp: View {
         }
         .sheet(isPresented: $showSheet) {
             MyNextView()
-								.presentationDetents([.large]) // Detents: 미끄럼을 막는 장치
-								.presentationDragIndicator(.hidden)
+		.presentationDetents([.large]) // Detents: 미끄럼을 막는 장치
+		.presentationDragIndicator(.hidden)
 
-								// .presentationDetents([.fraction(0.1), .medium, .large])
-								//  < .large, .medium, .fraction(0.1) > Sheet의 사이즈 비율을 결정
+		// .presentationDetents([.fraction(0.1), .medium, .large])
+		//  < .large, .medium, .fraction(0.1) > Sheet의 사이즈 비율을 결정
 
-                                // .presentationDetents([.height(200)]) // 높이
+		// .presentationDetents([.height(200)]) // 높이
 
-								// .interactiveDismissDisabled() // 시트가 사라지지 못하게 막는 역할
+		// .interactiveDismissDisabled() // 시트가 사라지지 못하게 막는 역할
         }
     }
 }
