@@ -21,7 +21,7 @@
     }
 
 ```
-<img width="293" alt="스크린샷 2023-05-10 오후 3 42 24" src="https://github.com/wakmusic/waktaverseMusic-iOS/assets/48616183/3c80066d-34a9-46db-8733-9a0bcfe6ee79">
+
 
 2. 색 변경
 
@@ -35,5 +35,4 @@ Toggle(isOn: $toggleIsOne) {
 
 ```
 
-<img width="293" alt="스크린샷 2023-05-10 오후 3 46 15" src="https://github.com/wakmusic/waktaverseMusic-iOS/assets/48616183/a1133f06-1632-400d-9de0-fc912f352496">
 
